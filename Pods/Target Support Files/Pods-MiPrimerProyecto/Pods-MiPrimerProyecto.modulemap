@@ -1,0 +1,6 @@
+framework module Pods_MiPrimerProyecto {
+  umbrella header "Pods-MiPrimerProyecto-umbrella.h"
+
+  export *
+  module * { export * }
+}

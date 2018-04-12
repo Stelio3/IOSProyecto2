@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>347909009323-j279ne9t8cj201nc7p6p8d53bs4kd5gg.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.347909009323-j279ne9t8cj201nc7p6p8d53bs4kd5gg</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBGT2uFoIO65e12E7TlL87df-eGpRWnSkg</string>
+	<key>GCM_SENDER_ID</key>
+	<string>347909009323</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>Pablo.MiPrimerProyecto</string>
+	<key>PROJECT_ID</key>
+	<string>miprimerproyecto-9f885</string>
+	<key>STORAGE_BUCKET</key>
+	<string>miprimerproyecto-9f885.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true></true>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false></false>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:347909009323:ios:e16b3fd0a2611b3c</string>
+	<key>DATABASE_URL</key>
+	<string>https://miprimerproyecto-9f885.firebaseio.com</string>
+</dict>
+</plist>

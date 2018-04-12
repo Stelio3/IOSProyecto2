@@ -15,6 +15,7 @@ class DataHolder: NSObject {
     
     var sNick:String = "Yony"
     var FireStoreDB:Firestore?
+    var miPerfil:Perfil = Perfil()
     
     func initFireBase(){
         FirebaseApp.configure()

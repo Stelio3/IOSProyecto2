@@ -13,6 +13,7 @@
 		79504F8F207CDBB800EF65C7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 79504F8E207CDBB800EF65C7 /* GoogleService-Info.plist */; };
 		79504F91207CE19700EF65C7 /* DataHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79504F90207CE19700EF65C7 /* DataHolder.swift */; };
 		7974A9EC2076969400926546 /* CVCMiCelda2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7974A9EB2076969400926546 /* CVCMiCelda2.swift */; };
+		798B76E7207F871E003F39D3 /* Perfil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798B76E6207F871E003F39D3 /* Perfil.swift */; };
 		79A8D5252073ACDC00538062 /* VCRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A8D5242073ACDC00538062 /* VCRegister.swift */; };
 		79E203242063B7D6003B2EA3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E203232063B7D6003B2EA3 /* AppDelegate.swift */; };
 		79E203262063B7D6003B2EA3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E203252063B7D6003B2EA3 /* ViewController.swift */; };
@@ -31,6 +32,7 @@
 		79504F8E207CDBB800EF65C7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		79504F90207CE19700EF65C7 /* DataHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataHolder.swift; sourceTree = "<group>"; };
 		7974A9EB2076969400926546 /* CVCMiCelda2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVCMiCelda2.swift; sourceTree = "<group>"; };
+		798B76E6207F871E003F39D3 /* Perfil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Perfil.swift; sourceTree = "<group>"; };
 		79A8D5242073ACDC00538062 /* VCRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCRegister.swift; sourceTree = "<group>"; };
 		79E203202063B7D6003B2EA3 /* MiPrimerProyecto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiPrimerProyecto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		79E203232063B7D6003B2EA3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 				794FF43F207688A80041A73B /* TVCMiCelda.swift */,
 				794FF447207690FD0041A73B /* VCColeccion.swift */,
 				7974A9EB2076969400926546 /* CVCMiCelda2.swift */,
+				798B76E6207F871E003F39D3 /* Perfil.swift */,
 				79504F90207CE19700EF65C7 /* DataHolder.swift */,
 				79E2032D2063B7D6003B2EA3 /* Assets.xcassets */,
 				79504F8E207CDBB800EF65C7 /* GoogleService-Info.plist */,
@@ -270,6 +273,7 @@
 				7974A9EC2076969400926546 /* CVCMiCelda2.swift in Sources */,
 				79A8D5252073ACDC00538062 /* VCRegister.swift in Sources */,
 				79E203262063B7D6003B2EA3 /* ViewController.swift in Sources */,
+				798B76E7207F871E003F39D3 /* Perfil.swift in Sources */,
 				79E203242063B7D6003B2EA3 /* AppDelegate.swift in Sources */,
 				794FF438207628530041A73B /* VCItem1.swift in Sources */,
 				794FF448207690FD0041A73B /* VCColeccion.swift in Sources */,

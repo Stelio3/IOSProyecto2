@@ -52,7 +52,7 @@ class ViewController: UIViewController {
                let ruta = DataHolder.sharedInstance.FireStoreDB?.collection("Perfiles").document((user?.uid)!)
                 ruta?.getDocument { (document, error) in
                     if document != nil{
-                        print(document?.data())
+                        DataHolder.sharedInstance.miPerfil.setMap(valores: (document?.data())!)
                         self.performSegue(withIdentifier: "trlogin", sender: self)
                     }else{
                         print(error!)

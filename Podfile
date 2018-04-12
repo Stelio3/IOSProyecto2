@@ -8,5 +8,7 @@ target 'MiPrimerProyecto' do
   # Pods for MiPrimerProyecto
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
+  pod 'Firebase/Core'
+  pod 'Firebase/Firestore'
 
 end

@@ -77,7 +77,6 @@
 		79E203222063B7D6003B2EA3 /* MiPrimerProyecto */ = {
 			isa = PBXGroup;
 			children = (
-				79504F8E207CDBB800EF65C7 /* GoogleService-Info.plist */,
 				79E203272063B7D6003B2EA3 /* Main.storyboard */,
 				79E203232063B7D6003B2EA3 /* AppDelegate.swift */,
 				79E203252063B7D6003B2EA3 /* ViewController.swift */,
@@ -88,6 +87,7 @@
 				7974A9EB2076969400926546 /* CVCMiCelda2.swift */,
 				79504F90207CE19700EF65C7 /* DataHolder.swift */,
 				79E2032D2063B7D6003B2EA3 /* Assets.xcassets */,
+				79504F8E207CDBB800EF65C7 /* GoogleService-Info.plist */,
 				79E2032F2063B7D6003B2EA3 /* LaunchScreen.storyboard */,
 				79E203322063B7D6003B2EA3 /* Info.plist */,
 				79E2032A2063B7D6003B2EA3 /* MiPrimerProyecto.xcdatamodeld */,
@@ -229,14 +229,28 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-MiPrimerProyecto/Pods-MiPrimerProyecto-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC/GRPCClient.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-ProtoRPC/ProtoRPC.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-RxLibrary/RxLibrary.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRPCClient.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ProtoRPC.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxLibrary.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;

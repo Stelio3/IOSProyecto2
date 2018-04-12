@@ -31,10 +31,16 @@ class VCRegister: UIViewController {
         Auth.auth().createUser(withEmail: (txtEmail?.text)!, password: (txtPassReg?.text)!) { (User, error) in
             if User != nil{
                 print("Te registraste")
+                self.performSegue(withIdentifier: "", sender: self)
+                DataHolder.sharedInstance.FireStoreDB?.collection("Perfiles").document((User?.uid)!).setData([
+                "first": "Yony",
+                "last": "BM",
+                "born": 1815])
             }else{
-                print(error)
+                print(error!)
             }
         }
+        print("HOLA!!" )
     }
 
     /*

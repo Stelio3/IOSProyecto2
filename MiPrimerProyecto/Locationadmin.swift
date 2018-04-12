@@ -1,5 +1,5 @@
 //
-//  Locationadmin.swift
+//  LocationAdmin.swift
 //  MiPrimerProyecto
 //
 //  Created by Pablo Hernadez Jiménez on 12/4/18.
@@ -8,6 +8,6 @@
 
 import UIKit
 
-class Locationadmin: NSObject {
+class LocationAdmin: NSObject {
 
 }

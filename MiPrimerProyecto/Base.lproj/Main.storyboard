@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="t2a-Q5-Xep">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1IR-ru-l0y">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -53,6 +53,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s8a-Wc-Uh3">
                                 <rect key="frame" x="58" y="591" width="251" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="I just want to register">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -70,6 +71,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mbn-Nj-FSa">
                                 <rect key="frame" x="164" y="546" width="38" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Login">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -105,12 +107,14 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IO0-KO-0r3">
                                 <rect key="frame" x="153" y="581" width="61" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="contentStretch" x="1" y="0.0" width="1" height="1"/>
                                 <state key="normal" title="Sign up">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <connections>
                                     <action selector="clickRegistrar" destination="DtT-Wo-DyC" eventType="touchUpInside" id="eGW-gF-28j"/>
-                                    <segue destination="hkO-K5-J7j" kind="show" identifier="trregister" id="guk-ge-4Aj"/>
+                                    <segue destination="hkO-K5-J7j" kind="show" identifier="trregister" id="Nua-yT-qBq"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EeC-YM-KrU">
@@ -183,8 +187,10 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u2E-ge-fhD">
                                 <rect key="frame" x="103" y="629" width="168" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="i just have an account">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleShadowColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <segue destination="t2a-Q5-Xep" kind="show" id="88Y-uA-Xy3"/>
@@ -206,28 +212,31 @@
             <point key="canvasLocation" x="-975" y="-22"/>
         </scene>
         <!--Mapa-->
-        <scene sceneID="Wbv-Jb-0he">
+        <scene sceneID="kPH-Rg-0ZY">
             <objects>
-                <viewController id="CPG-RL-o0i" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="uLc-LR-AQE">
+                <viewController id="1IR-ru-l0y" customClass="VCMapa" customModule="MiPrimerProyecto" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XR8-3y-qxz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="TgO-M0-5b9">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="OKh-pa-skk">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="DWK-V8-GdH"/>
+                        <viewLayoutGuide key="safeArea" id="M8O-c5-Nz8"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Mapa" id="b2B-qW-L8Z"/>
+                    <tabBarItem key="tabBarItem" title="Mapa" id="eVY-pA-jDq"/>
+                    <connections>
+                        <outlet property="MiMapa" destination="OKh-pa-skk" id="nMw-gN-AIn"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="WWp-mO-OeK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cme-yI-LIZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-200" y="-12"/>
+            <point key="canvasLocation" x="-201" y="-46"/>
         </scene>
-        <!--Item 2-->
+        <!--Collections-->
         <scene sceneID="7Sm-HD-Qua">
             <objects>
                 <viewController id="EAN-zW-ovq" customClass="VCColeccion" customModule="MiPrimerProyecto" customModuleProvider="target" sceneMemberID="viewController">
@@ -281,7 +290,7 @@
                         <color key="backgroundColor" red="0.2115270802" green="0.57790801599999997" blue="0.92254290800000005" alpha="0.62450484149999996" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="KpF-mG-uly"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="e9o-4n-wy1"/>
+                    <tabBarItem key="tabBarItem" title="Collections" id="e9o-4n-wy1"/>
                     <connections>
                         <outlet property="colPrincipal" destination="Pid-ab-aNY" id="Xl7-q2-cps"/>
                     </connections>
@@ -290,7 +299,7 @@
             </objects>
             <point key="canvasLocation" x="588" y="-376.46176911544228"/>
         </scene>
-        <!--Item 1-->
+        <!--Table-->
         <scene sceneID="E9F-Jv-x2F">
             <objects>
                 <viewController id="Xbv-kx-f9p" customClass="VCItem1" customModule="MiPrimerProyecto" customModuleProvider="target" sceneMemberID="viewController">
@@ -339,7 +348,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="KgP-wp-flP"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="rsm-Of-9io"/>
+                    <tabBarItem key="tabBarItem" title="Table" id="rsm-Of-9io"/>
                     <connections>
                         <outlet property="tabla" destination="iXG-HJ-ZPQ" id="nhx-Ke-zsI"/>
                     </connections>
@@ -360,7 +369,7 @@
                     <connections>
                         <segue destination="Xbv-kx-f9p" kind="relationship" relationship="viewControllers" id="kyD-3d-vhZ"/>
                         <segue destination="EAN-zW-ovq" kind="relationship" relationship="viewControllers" id="Ick-Fw-8mg"/>
-                        <segue destination="CPG-RL-o0i" kind="relationship" relationship="viewControllers" id="axw-Za-hbf"/>
+                        <segue destination="1IR-ru-l0y" kind="relationship" relationship="viewControllers" id="Pay-7r-pR5"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2bz-rM-hpC" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -372,6 +381,7 @@
         <image name="descarga" width="319" height="158"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="guk-ge-4Aj"/>
+        <segue reference="RT7-dI-LQY"/>
+        <segue reference="NNf-K1-nK8"/>
     </inferredMetricsTieBreakers>
 </document>

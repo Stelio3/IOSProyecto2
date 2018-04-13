@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		32838260207FC28800731DF4 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3283825F207FC28800731DF4 /* MapKit.framework */; };
+		32838262207FC30000731DF4 /* VCMapa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32838261207FC30000731DF4 /* VCMapa.swift */; };
+		3288D05A207FFBB100DD5569 /* LocationAdmin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3288D059207FFBB100DD5569 /* LocationAdmin.swift */; };
 		794FF438207628530041A73B /* VCItem1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794FF437207628530041A73B /* VCItem1.swift */; };
 		794FF440207688A80041A73B /* TVCMiCelda.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794FF43F207688A80041A73B /* TVCMiCelda.swift */; };
 		794FF448207690FD0041A73B /* VCColeccion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794FF447207690FD0041A73B /* VCColeccion.swift */; };
@@ -26,6 +29,9 @@
 
 /* Begin PBXFileReference section */
 		162DAD0345B9790C7DE23412 /* Pods-MiPrimerProyecto.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MiPrimerProyecto.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MiPrimerProyecto/Pods-MiPrimerProyecto.debug.xcconfig"; sourceTree = "<group>"; };
+		3283825F207FC28800731DF4 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		32838261207FC30000731DF4 /* VCMapa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCMapa.swift; sourceTree = "<group>"; };
+		3288D059207FFBB100DD5569 /* LocationAdmin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationAdmin.swift; sourceTree = "<group>"; };
 		794FF437207628530041A73B /* VCItem1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCItem1.swift; sourceTree = "<group>"; };
 		794FF43F207688A80041A73B /* TVCMiCelda.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVCMiCelda.swift; sourceTree = "<group>"; };
 		794FF447207690FD0041A73B /* VCColeccion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCColeccion.swift; sourceTree = "<group>"; };
@@ -51,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32838260207FC28800731DF4 /* MapKit.framework in Frameworks */,
 				C2AC29FED5DA12A296E96339 /* Pods_MiPrimerProyecto.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -87,6 +94,8 @@
 				794FF43F207688A80041A73B /* TVCMiCelda.swift */,
 				794FF447207690FD0041A73B /* VCColeccion.swift */,
 				7974A9EB2076969400926546 /* CVCMiCelda2.swift */,
+				3288D059207FFBB100DD5569 /* LocationAdmin.swift */,
+				32838261207FC30000731DF4 /* VCMapa.swift */,
 				798B76E6207F871E003F39D3 /* Perfil.swift */,
 				79504F90207CE19700EF65C7 /* DataHolder.swift */,
 				79E2032D2063B7D6003B2EA3 /* Assets.xcassets */,
@@ -101,6 +110,7 @@
 		A1918EB52A49392A9C7D1C1A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3283825F207FC28800731DF4 /* MapKit.framework */,
 				C9176CC5E7664E64DA92C5AF /* Pods_MiPrimerProyecto.framework */,
 			);
 			name = Frameworks;
@@ -153,6 +163,9 @@
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Maps.iOS = {
 								enabled = 1;
 							};
 						};
@@ -271,10 +284,12 @@
 				79E2032C2063B7D6003B2EA3 /* MiPrimerProyecto.xcdatamodeld in Sources */,
 				79504F91207CE19700EF65C7 /* DataHolder.swift in Sources */,
 				7974A9EC2076969400926546 /* CVCMiCelda2.swift in Sources */,
+				32838262207FC30000731DF4 /* VCMapa.swift in Sources */,
 				79A8D5252073ACDC00538062 /* VCRegister.swift in Sources */,
 				79E203262063B7D6003B2EA3 /* ViewController.swift in Sources */,
 				798B76E7207F871E003F39D3 /* Perfil.swift in Sources */,
 				79E203242063B7D6003B2EA3 /* AppDelegate.swift in Sources */,
+				3288D05A207FFBB100DD5569 /* LocationAdmin.swift in Sources */,
 				794FF438207628530041A73B /* VCItem1.swift in Sources */,
 				794FF448207690FD0041A73B /* VCColeccion.swift in Sources */,
 				794FF440207688A80041A73B /* TVCMiCelda.swift in Sources */,

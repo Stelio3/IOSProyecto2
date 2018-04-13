@@ -13,6 +13,7 @@ class DataHolder: NSObject {
 
     static let sharedInstance:DataHolder = DataHolder()
     
+    var locationAdmin:LocationAdmin?
     var sNick:String = "Yony"
     var FireStoreDB:Firestore?
     var miPerfil:Perfil = Perfil()
@@ -21,5 +22,14 @@ class DataHolder: NSObject {
         FirebaseApp.configure()
         FireStoreDB = Firestore.firestore()
     }
-
+    
+    func initLocationAdmin(){
+        locationAdmin=LocationAdmin()
+    }
+    func nombreDeCelda(numero:Int) -> NSString {
+        if(numero == 0){
+            return "Pablo"
+        }
+        return ""
+    }
 }

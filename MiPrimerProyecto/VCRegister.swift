@@ -28,10 +28,10 @@ class VCRegister: UIViewController {
     }
     
     @IBAction func clickRegistrar(){
-        Auth.auth().createUser(withEmail: (txtEmail?.text)!, password: (txtPassReg?.text)!) { (User, error) in
+        Auth.auth().createUser(withEmail: (txtUsureg?.text)!, password: (txtPassReg?.text)!) { (User, error) in
             if User != nil{
                 print("Te registraste")
-                self.performSegue(withIdentifier: "", sender: self)
+                self.performSegue(withIdentifier: "trregister", sender: self)
                 DataHolder.sharedInstance.FireStoreDB?.collection("Perfiles").document((User?.uid)!).setData(DataHolder.sharedInstance.miPerfil.getMap())
             }else{
                 print(error!)

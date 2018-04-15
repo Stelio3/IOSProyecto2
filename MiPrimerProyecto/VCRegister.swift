@@ -15,6 +15,7 @@ class VCRegister: UIViewController {
     @IBOutlet var txtPassReg:UITextField?
     @IBOutlet var txtRepPass:UITextField?
     @IBOutlet var txtEmail:UITextField?
+    @IBOutlet var btnSingIn:UIButton?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +29,10 @@ class VCRegister: UIViewController {
     }
     
     @IBAction func clickRegistrar(){
+        DataHolder.sharedInstance.miPerfil.sNombre = "Pablo"
+        DataHolder.sharedInstance.miPerfil.sApellido = "Hdez"
+        DataHolder.sharedInstance.miPerfil.iFecha = 1900
+        
         Auth.auth().createUser(withEmail: (txtUsureg?.text)!, password: (txtPassReg?.text)!) { (User, error) in
             if User != nil{
                 print("Te registraste")

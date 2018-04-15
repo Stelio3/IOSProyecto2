@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1IR-ru-l0y">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="t2a-Q5-Xep">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -84,7 +84,7 @@
                         <viewLayoutGuide key="safeArea" id="Os0-C9-kD6"/>
                     </view>
                     <connections>
-                        <outlet property="btnLogin" destination="mbn-Nj-FSa" id="0Mm-WN-vSF"/>
+                        <outlet property="btnLogin" destination="mbn-Nj-FSa" id="IvZ-21-25L"/>
                         <outlet property="btnRegistra" destination="s8a-Wc-Uh3" id="0rT-Vu-7F0"/>
                         <outlet property="txtPass" destination="Zfc-eu-H0M" id="8Sd-Ig-WVV"/>
                         <outlet property="txtUser" destination="ypN-cI-HYc" id="gIz-Oa-Sq8"/>
@@ -114,7 +114,6 @@
                                 </state>
                                 <connections>
                                     <action selector="clickRegistrar" destination="DtT-Wo-DyC" eventType="touchUpInside" id="eGW-gF-28j"/>
-                                    <segue destination="hkO-K5-J7j" kind="show" identifier="trregister" id="Nua-yT-qBq"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EeC-YM-KrU">
@@ -201,10 +200,12 @@
                         <viewLayoutGuide key="safeArea" id="fk0-Yf-xA1"/>
                     </view>
                     <connections>
+                        <outlet property="btnSingIn" destination="IO0-KO-0r3" id="d4J-vq-8Gy"/>
                         <outlet property="txtEmail" destination="hEO-iS-Be0" id="ahM-g2-reL"/>
                         <outlet property="txtPassReg" destination="cnW-8J-avv" id="Ga7-kK-rnc"/>
                         <outlet property="txtRepPass" destination="0FS-yL-FNF" id="An4-HF-7Wi"/>
                         <outlet property="txtUsureg" destination="EeC-YM-KrU" id="Ynf-w0-J1w"/>
+                        <segue destination="hkO-K5-J7j" kind="show" identifier="trregister" id="Vl2-Ug-732"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Odu-UG-5br" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -381,7 +382,6 @@
         <image name="descarga" width="319" height="158"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="RT7-dI-LQY"/>
         <segue reference="NNf-K1-nK8"/>
     </inferredMetricsTieBreakers>
 </document>

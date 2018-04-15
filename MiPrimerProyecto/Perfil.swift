@@ -10,19 +10,21 @@ import UIKit
 
 class Perfil: NSObject {
 
+    let IDNombre="nombre"
+    
     var sNombre:String?
     var sApellido:String?
     var iFecha:Int?
     
     func setMap(valores:[String:Any]) {
-        sNombre = valores["nombre"] as? String
-        sApellido = valores["nombre"] as? String
-        iFecha = valores["nombre"] as? Int
+        sNombre = valores[IDNombre] as? String
+        sApellido = valores["apellido"] as? String
+        iFecha = valores["nacimiento"] as? Int
     }
     
     func getMap() -> [String:Any]{
         return[
-            "nombre": sNombre as Any,
+            IDNombre: sNombre as Any,
             "apellido":sApellido as Any,
             "nacimiento": iFecha as Any
         ]

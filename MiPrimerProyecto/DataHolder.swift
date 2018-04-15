@@ -21,7 +21,41 @@ class DataHolder: NSObject {
     func initFireBase(){
         FirebaseApp.configure()
         FireStoreDB = Firestore.firestore()
-    }
+        
+        let citiesRef = FireStoreDB?.collection("cities")
+        
+        citiesRef?.document("SF").setData([
+            "name": "San Francisco",
+            "state": "CA",
+            "country": "USA",
+            "capital": false,
+            "population": 860000
+            ])
+        citiesRef?.document("LA").setData([
+            "name": "Los Angeles",
+            "state": "CA",
+            "country": "USA",
+            "capital": false,
+            "population": 3900000
+            ])
+        citiesRef?.document("DC").setData([
+            "name": "Washington D.C.",
+            "country": "USA",
+            "capital": true,
+            "population": 680000
+            ])
+        citiesRef?.document("TOK").setData([
+            "name": "Tokyo",
+            "country": "Japan",
+            "capital": true,
+            "population": 9000000
+            ])
+        citiesRef?.document("BJ").setData([
+            "name": "Beijing",
+            "country": "China",
+            "capital": true,
+            "population": 21500000
+            ])    }
     
     func initLocationAdmin(){
         locationAdmin=LocationAdmin()

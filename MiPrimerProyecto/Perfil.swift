@@ -11,7 +11,7 @@ import UIKit
 class Perfil: NSObject {
 
     let IDNombre="nombre"
-    
+    var sID:String?
     var sNombre:String?
     var sApellido:String?
     var iFecha:Int?

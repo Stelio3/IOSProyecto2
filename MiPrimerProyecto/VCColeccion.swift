@@ -11,26 +11,47 @@ import UIKit
 class VCColeccion: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
     @IBOutlet var colPrincipal:UICollectionView?
-    
+    var arPerfiles:[Perfil] = []
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        DataHolder.sharedInstance.FireStoreDB?.collection("Perfiles")
+            .addSnapshotListener { (querySnapshot, err) in
+                if let err = err {
+                    print("Error getting documents: \(err)")
+                } else {
+                    self.arPerfiles=[]
+                    for document in querySnapshot!.documents {
+                        let perfil:Perfil = Perfil()
+                        perfil.sID=document.documentID
+                        perfil.setMap(valores: document.data())
+                        self.arPerfiles.append(perfil)
+                        
+                        print("\(document.documentID) => \(document.data())")
+                    }
+                    print(self.arPerfiles.count)
+                    self.refreshUI()
+                    
+                    
+                }
         // Do any additional setup after loading the view.
     }
-
+}
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return self.arPerfiles.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell:CVCMiCelda2 = collectionView.dequeueReusableCell(withReuseIdentifier: "micelda2", for: indexPath) as! CVCMiCelda2
-        
-        if indexPath.row == 0
+        cell.lblNombre?.text = self.arPerfiles[indexPath.row].sNombre
+        cell.lblApellido?.text = self.arPerfiles[indexPath.row].sApellido
+
+        /*if indexPath.row == 0
         {
             cell.lblNombre?.text="Jaime"
             cell.imgvMain?.image=UIImage(named: "descarga.jpeg")
@@ -54,10 +75,14 @@ class VCColeccion: UIViewController, UICollectionViewDelegate, UICollectionViewD
         {
             cell.lblNombre?.text="Javier"
             cell.imgvMain?.image=UIImage(named: "descarga.jpeg")
-        }
+        }*/
         return cell
     }
-    /*
+    func refreshUI() {
+        DispatchQueue.main.async(execute: {
+            self.colPrincipal?.reloadData()
+        })
+    }    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -66,5 +91,4 @@ class VCColeccion: UIViewController, UICollectionViewDelegate, UICollectionViewD
         // Pass the selected object to the new view controller.
     }
     */
-
 }

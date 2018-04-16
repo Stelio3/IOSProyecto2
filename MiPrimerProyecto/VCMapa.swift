@@ -14,7 +14,9 @@ class VCMapa: UIViewController, LocationAdminDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        DataHolder.sharedInstance.locationAdmin?.delegate=self
+        MiMapa?.showsUserLocation = true
+       // MiMapa?.delegate = self as? MKMapViewDelegate
+       // DataHolder.sharedInstance.locationAdmin?.delegate=self
         var coordTemp:CLLocationCoordinate2D = CLLocationCoordinate2D()
         coordTemp.latitude = 40.4165000
         coordTemp.longitude = -3.7025600
@@ -23,7 +25,7 @@ class VCMapa: UIViewController, LocationAdminDelegate{
         var coordTemp2:CLLocationCoordinate2D = CLLocationCoordinate2D()
         coordTemp2.latitude = 40.4165000
         coordTemp2.longitude = -4.7025600
-        agragarPin(coordenada: coordTemp2, titulo: "PIN2 ")        // Do any additional setup after loading the view.
+        agragarPin(coordenada: coordTemp2, titulo: "PIN2 ")       // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -43,7 +45,7 @@ class VCMapa: UIViewController, LocationAdminDelegate{
     }
     
     func centralizarEnPosicion(coordenada:CLLocationCoordinate2D) {
-        let region:MKCoordinateRegion = MKCoordinateRegion(center: coordenada, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+        let region:MKCoordinateRegion = MKCoordinateRegion(center: coordenada, span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))
         MiMapa?.setRegion(region, animated: true)
     }
     

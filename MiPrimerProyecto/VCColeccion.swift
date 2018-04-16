@@ -49,7 +49,7 @@ class VCColeccion: UIViewController, UICollectionViewDelegate, UICollectionViewD
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell:CVCMiCelda2 = collectionView.dequeueReusableCell(withReuseIdentifier: "micelda2", for: indexPath) as! CVCMiCelda2
         cell.lblNombre?.text = self.arPerfiles[indexPath.row].sNombre
-        cell.lblApellido?.text = self.arPerfiles[indexPath.row].sApellido
+        cell.lblApellido?.text = self.arPerfiles[indexPath.row].sEmail
 
         /*if indexPath.row == 0
         {

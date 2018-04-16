@@ -13,20 +13,18 @@ class Perfil: NSObject {
     let IDNombre="nombre"
     var sID:String?
     var sNombre:String?
-    var sApellido:String?
-    var iFecha:Int?
+    var sEmail:String?
+    //var iFecha:Int?
     
     func setMap(valores:[String:Any]) {
         sNombre = valores[IDNombre] as? String
-        sApellido = valores["apellido"] as? String
-        iFecha = valores["nacimiento"] as? Int
+        sEmail = valores["email"] as? String
     }
     
     func getMap() -> [String:Any]{
         return[
             IDNombre: sNombre as Any,
-            "apellido":sApellido as Any,
-            "nacimiento": iFecha as Any
+            "email":sEmail as Any,
         ]
     }
 }

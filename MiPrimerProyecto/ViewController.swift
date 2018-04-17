@@ -19,6 +19,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        btnRegistra?.layer.cornerRadius = 10
         // Do any additional setup after loading the view, typically from a nib.
         txtUser?.text = DataHolder.sharedInstance.sNick
         

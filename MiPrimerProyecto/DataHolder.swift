@@ -16,11 +16,13 @@ class DataHolder: NSObject {
     var locationAdmin:LocationAdmin?
     var sNick:String = "Yony"
     var FireStoreDB:Firestore?
+    var firStorage:Storage?
     var miPerfil:Perfil = Perfil()
     
     func initFireBase(){
         FirebaseApp.configure()
         FireStoreDB = Firestore.firestore()
+        firStorage = Storage.storage()
         
         let citiesRef = FireStoreDB?.collection("cities")
         

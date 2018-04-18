@@ -52,6 +52,7 @@ class VCItem1: UIViewController, UITableViewDelegate, UITableViewDataSource {
         let cell:TVCMiCelda = tableView.dequeueReusableCell(withIdentifier: "micelda1") as! TVCMiCelda
         cell.lblNombre?.text = self.arCiudades[indexPath.row].sName
         cell.lblPais?.text = self.arCiudades[indexPath.row].sCountry
+        cell.mostrarImagen(uri: self.arCiudades[indexPath.row].sUrlImage!)
         
         /*if indexPath.row == 0
         {

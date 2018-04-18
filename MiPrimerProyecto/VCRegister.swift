@@ -16,10 +16,13 @@ class VCRegister: UIViewController {
     @IBOutlet var txtRepPass:UITextField?
     @IBOutlet var txtEmail:UITextField?
     @IBOutlet var btnSingIn:UIButton?
+    @IBOutlet var btnGoLogin:UIButton?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        txtUsureg?.text = DataHolder.sharedInstance.sNick
+        btnSingIn?.layer.cornerRadius = 10
+        btnGoLogin?.layer.cornerRadius = 10
+        //txtUsureg?.text = DataHolder.sharedInstance.sNick
         // Do any additional setup after loading the view.
     }
 

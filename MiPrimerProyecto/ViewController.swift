@@ -17,9 +17,11 @@ class ViewController: UIViewController {
     @IBOutlet var btnLogin:UIButton?
     @IBOutlet var txtVConsola:UITextView?
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         btnRegistra?.layer.cornerRadius = 10
+        btnLogin?.layer.cornerRadius = 10
         // Do any additional setup after loading the view, typically from a nib.
         txtUser?.text = DataHolder.sharedInstance.sNick
         

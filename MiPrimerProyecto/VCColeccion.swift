@@ -50,6 +50,8 @@ class VCColeccion: UIViewController, UICollectionViewDelegate, UICollectionViewD
         let cell:CVCMiCelda2 = collectionView.dequeueReusableCell(withReuseIdentifier: "micelda2", for: indexPath) as! CVCMiCelda2
         cell.lblNombre?.text = DataHolder.sharedInstance.arPerfiles[indexPath.row].sNombre
         cell.lblApellido?.text = DataHolder.sharedInstance.arPerfiles[indexPath.row].sEmail
+        cell.mostrarImage(uri: DataHolder.sharedInstance.arPerfiles[indexPath.row].sImage!)
+
 
         /*if indexPath.row == 0
         {

@@ -11,7 +11,7 @@ import UIKit
 class VCColeccion: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
     @IBOutlet var colPrincipal:UICollectionView?
-    var arPerfiles:[Perfil] = []
+   // var arPerfiles:[Perfil] = []
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -20,16 +20,16 @@ class VCColeccion: UIViewController, UICollectionViewDelegate, UICollectionViewD
                 if let err = err {
                     print("Error getting documents: \(err)")
                 } else {
-                    self.arPerfiles=[]
+                    DataHolder.sharedInstance.arPerfiles=[]
                     for document in querySnapshot!.documents {
                         let perfil:Perfil = Perfil()
                         perfil.sID=document.documentID
                         perfil.setMap(valores: document.data())
-                        self.arPerfiles.append(perfil)
+                        DataHolder.sharedInstance.arPerfiles.append(perfil)
                         
                         print("\(document.documentID) => \(document.data())")
                     }
-                    print(self.arPerfiles.count)
+                    print(DataHolder.sharedInstance.arPerfiles.count)
                     self.refreshUI()
                     
                     
@@ -43,13 +43,13 @@ class VCColeccion: UIViewController, UICollectionViewDelegate, UICollectionViewD
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.arPerfiles.count
+        return DataHolder.sharedInstance.arPerfiles.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell:CVCMiCelda2 = collectionView.dequeueReusableCell(withReuseIdentifier: "micelda2", for: indexPath) as! CVCMiCelda2
-        cell.lblNombre?.text = self.arPerfiles[indexPath.row].sNombre
-        cell.lblApellido?.text = self.arPerfiles[indexPath.row].sEmail
+        cell.lblNombre?.text = DataHolder.sharedInstance.arPerfiles[indexPath.row].sNombre
+        cell.lblApellido?.text = DataHolder.sharedInstance.arPerfiles[indexPath.row].sEmail
 
         /*if indexPath.row == 0
         {

@@ -11,7 +11,7 @@ import UIKit
 class VCItem1: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet var tabla:UITableView?
-    var arCiudades:[City] = []
+   // var arCiudades:[City] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,16 +21,16 @@ class VCItem1: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 if let err = err {
                     print("Error getting documents: \(err)")
                 } else {
-                    self.arCiudades=[]
+                    DataHolder.sharedInstance.arCiudades=[]
                     for document in querySnapshot!.documents {
                         let ciudad:City = City()
                         ciudad.sID=document.documentID
                         ciudad.setMap(valores: document.data())
-                        self.arCiudades.append(ciudad)
+                        DataHolder.sharedInstance.arCiudades.append(ciudad)
                         
                         print("\(document.documentID) => \(document.data())")
                     }
-                    print(self.arCiudades.count)
+                    print(DataHolder.sharedInstance.arCiudades.count)
                     self.refreshUI()
                     
                     
@@ -45,14 +45,14 @@ class VCItem1: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.arCiudades.count
+        return DataHolder.sharedInstance.arCiudades.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell:TVCMiCelda = tableView.dequeueReusableCell(withIdentifier: "micelda1") as! TVCMiCelda
-        cell.lblNombre?.text = self.arCiudades[indexPath.row].sName
-        cell.lblPais?.text = self.arCiudades[indexPath.row].sCountry
-        cell.mostrarImagen(uri: self.arCiudades[indexPath.row].sUrlImage!)
+        cell.lblNombre?.text = DataHolder.sharedInstance.arCiudades[indexPath.row].sName
+        cell.lblPais?.text = DataHolder.sharedInstance.arCiudades[indexPath.row].sCountry
+        cell.mostrarImagen(uri: DataHolder.sharedInstance.arCiudades[indexPath.row].sUrlImage!)
         
         /*if indexPath.row == 0
         {

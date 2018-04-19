@@ -18,6 +18,9 @@ class DataHolder: NSObject {
     var FireStoreDB:Firestore?
     var firStorage:Storage?
     var miPerfil:Perfil = Perfil()
+    var arCiudades:[City] = []
+    var arPerfiles:[Perfil] = []
+    
     
     func initFireBase(){
         FirebaseApp.configure()

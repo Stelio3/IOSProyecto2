@@ -236,7 +236,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cme-yI-LIZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-201" y="-46"/>
+            <point key="canvasLocation" x="-201" y="-63"/>
         </scene>
         <!--Collections-->
         <scene sceneID="7Sm-HD-Qua">
@@ -399,7 +399,6 @@
         <image name="descarga" width="319" height="158"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="88Y-uA-Xy3"/>
         <segue reference="Vl2-Ug-732"/>
     </inferredMetricsTieBreakers>
 </document>

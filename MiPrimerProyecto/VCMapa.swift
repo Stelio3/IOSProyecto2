@@ -15,8 +15,13 @@ class VCMapa: UIViewController, CLLocationManagerDelegate {
     var locationManager:CLLocationManager?
     
     override func viewDidLoad() {
+        for ciudades in DataHolder.sharedInstance.arCiudades{
+            if ciudades.iLatitude != nil{
+                self.AgregarPin(titulo: ciudades.sName!, latitude: ciudades.iLatitude!, longitude: ciudades.iLongitud!)
+            }
+        }
         super.viewDidLoad()
-        self.AgregarPin(titulo: "Xkun la chupa", latitude: 48, longitude: -8)
+        self.nuevaRegionMapa(latitude: 40.5, longitude: -3.666667)
         locationManager = CLLocationManager()
         locationManager?.delegate=self
         locationManager?.requestAlwaysAuthorization()
@@ -40,11 +45,11 @@ class VCMapa: UIViewController, CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         print(locations[0])
-        self.nuevaRegionMapa(latitude:locations[0].coordinate.latitude, longitude:locations[0].coordinate.longitude)
+        //self.nuevaRegionMapa(latitude:locations[0].coordinate.latitude, longitude:locations[0].coordinate.longitude)
     }
     
     func nuevaRegionMapa(latitude lat:Double,longitude lon:Double){
-        let miSpan:MKCoordinateSpan=MKCoordinateSpan(latitudeDelta:0.01,longitudeDelta:0.01)
+        let miSpan:MKCoordinateSpan=MKCoordinateSpan(latitudeDelta:9,longitudeDelta:9)
         let puntoCentro:CLLocationCoordinate2D=CLLocationCoordinate2D(latitude: lat, longitude: lon)
         let miRegion:MKCoordinateRegion=MKCoordinateRegion(center:puntoCentro , span: miSpan)
         miMap?.setRegion(miRegion, animated: true)

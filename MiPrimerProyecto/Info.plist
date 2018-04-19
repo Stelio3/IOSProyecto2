@@ -38,6 +38,8 @@
 	<string>Mensaje 1 </string>
 	<key>NSLocationUsageDescription</key>
 	<string>Mensaje 2</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Mensaje 4</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Mensaje 3</string>
 	<key>UISupportedInterfaceOrientations~ipad</key>

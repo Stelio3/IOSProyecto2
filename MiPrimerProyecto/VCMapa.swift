@@ -1,66 +1,63 @@
 //
-//  VCMapa.swift
-//  MiPrimerProyecto
+//  VCMap.swift
+//  TrabajoFinal
 //
-//  Created by Pablo Hernadez Jiménez on 12/4/18.
-//  Copyright © 2018 PABLO HERNANDEZ JIMENEZ. All rights reserved.
+//  Created by Miguel Angel Martinez Gonzalez on 19/4/18.
+//  Copyright © 2018 Miguel Angel Martinez Gonzalez. All rights reserved.
 //
 
 import UIKit
 import MapKit
+import CoreLocation
 
-class VCMapa: UIViewController, LocationAdminDelegate{
-
-    @IBOutlet var MiMapa:MKMapView?
+class VCMapa: UIViewController, CLLocationManagerDelegate {
+    @IBOutlet var miMap:MKMapView?
+    var locationManager:CLLocationManager?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        MiMapa?.showsUserLocation = true
-        MiMapa?.delegate = self as? MKMapViewDelegate
-        //DataHolder.sharedInstance.locationAdmin?.delegate=self
-        var coordTemp:CLLocationCoordinate2D = CLLocationCoordinate2D()
-        coordTemp.latitude = 40.4165000
-        coordTemp.longitude = -3.7025600
-        agragarPin(coordenada: coordTemp, titulo: "PIN1 ")
-        
-        var coordTemp2:CLLocationCoordinate2D = CLLocationCoordinate2D()
-        coordTemp2.latitude = 40.4165000
-        coordTemp2.longitude = -4.7025600
-        agragarPin(coordenada: coordTemp2, titulo: "PIN2 ")       // Do any additional setup after loading the view.
+        self.AgregarPin(titulo: "Xkun la chupa", latitude: 48, longitude: -8)
+        locationManager = CLLocationManager()
+        locationManager?.delegate=self
+        locationManager?.requestAlwaysAuthorization()
+        locationManager?.startUpdatingLocation()
+        miMap?.showsUserLocation=true
+        // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    func localizacionActualizada(coordenada:CLLocationCoordinate2D)  {
-        centralizarEnPosicion(coordenada:coordenada)
+    func AgregarPin(titulo:String, latitude lat: Double, longitude lon:Double ) {
+        let miPin:MKPointAnnotation=MKPointAnnotation()
+        miPin.coordinate.latitude=lat
+        miPin.coordinate.longitude=lon
+        miPin.title = titulo
+        miMap?.addAnnotation(miPin)
     }
     
-    func agragarPin(coordenada:CLLocationCoordinate2D, titulo tpin:String){
-        let annotation:MKPointAnnotation = MKPointAnnotation()
-        annotation.coordinate = coordenada
-        annotation.title = tpin
-        MiMapa?.addAnnotation(annotation)
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        print(locations[0])
+        self.nuevaRegionMapa(latitude:locations[0].coordinate.latitude, longitude:locations[0].coordinate.longitude)
     }
     
-    func centralizarEnPosicion(coordenada:CLLocationCoordinate2D) {
-        let region:MKCoordinateRegion = MKCoordinateRegion(center: coordenada, span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))
-        MiMapa?.setRegion(region, animated: true)
+    func nuevaRegionMapa(latitude lat:Double,longitude lon:Double){
+        let miSpan:MKCoordinateSpan=MKCoordinateSpan(latitudeDelta:0.01,longitudeDelta:0.01)
+        let puntoCentro:CLLocationCoordinate2D=CLLocationCoordinate2D(latitude: lat, longitude: lon)
+        let miRegion:MKCoordinateRegion=MKCoordinateRegion(center:puntoCentro , span: miSpan)
+        miMap?.setRegion(miRegion, animated: true)
     }
     
-    func mapView(_ mapView:MKMapView, didUpdate userLocation: MKUserLocation) {
-        centralizarEnPosicion(coordenada: userLocation.coordinate)
-    }
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

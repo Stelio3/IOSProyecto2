@@ -24,7 +24,7 @@ class DataHolder: NSObject {
         FireStoreDB = Firestore.firestore()
         firStorage = Storage.storage()
         
-        let citiesRef = FireStoreDB?.collection("cities")
+        /*let citiesRef = FireStoreDB?.collection("cities")
         
         citiesRef?.document("SF").setData([
             "name": "San Francisco",
@@ -57,7 +57,9 @@ class DataHolder: NSObject {
             "country": "China",
             "capital": true,
             "population": 21500000
-            ])    }
+            ])*/
+ 
+    }
     
     func initLocationAdmin(){
         locationAdmin=LocationAdmin()

@@ -19,6 +19,7 @@
 		7974A9EC2076969400926546 /* CVCMiCelda2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7974A9EB2076969400926546 /* CVCMiCelda2.swift */; };
 		798B76E7207F871E003F39D3 /* Perfil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798B76E6207F871E003F39D3 /* Perfil.swift */; };
 		79A8D5252073ACDC00538062 /* VCRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A8D5242073ACDC00538062 /* VCRegister.swift */; };
+		79DC502A208F4BDF00C70874 /* VCPrincipal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DC5029208F4BDF00C70874 /* VCPrincipal.swift */; };
 		79E203242063B7D6003B2EA3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E203232063B7D6003B2EA3 /* AppDelegate.swift */; };
 		79E203262063B7D6003B2EA3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E203252063B7D6003B2EA3 /* ViewController.swift */; };
 		79E203292063B7D6003B2EA3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79E203272063B7D6003B2EA3 /* Main.storyboard */; };
@@ -42,6 +43,7 @@
 		7974A9EB2076969400926546 /* CVCMiCelda2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVCMiCelda2.swift; sourceTree = "<group>"; };
 		798B76E6207F871E003F39D3 /* Perfil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Perfil.swift; sourceTree = "<group>"; };
 		79A8D5242073ACDC00538062 /* VCRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCRegister.swift; sourceTree = "<group>"; };
+		79DC5029208F4BDF00C70874 /* VCPrincipal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCPrincipal.swift; sourceTree = "<group>"; };
 		79E203202063B7D6003B2EA3 /* MiPrimerProyecto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiPrimerProyecto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		79E203232063B7D6003B2EA3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		79E203252063B7D6003B2EA3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 				79E203232063B7D6003B2EA3 /* AppDelegate.swift */,
 				79E203252063B7D6003B2EA3 /* ViewController.swift */,
 				79A8D5242073ACDC00538062 /* VCRegister.swift */,
+				79DC5029208F4BDF00C70874 /* VCPrincipal.swift */,
 				794FF437207628530041A73B /* VCItem1.swift */,
 				794FF43F207688A80041A73B /* TVCMiCelda.swift */,
 				794FF447207690FD0041A73B /* VCColeccion.swift */,
@@ -287,6 +290,7 @@
 				79E2032C2063B7D6003B2EA3 /* MiPrimerProyecto.xcdatamodeld in Sources */,
 				79504F91207CE19700EF65C7 /* DataHolder.swift in Sources */,
 				7974A9EC2076969400926546 /* CVCMiCelda2.swift in Sources */,
+				79DC502A208F4BDF00C70874 /* VCPrincipal.swift in Sources */,
 				32838262207FC30000731DF4 /* VCMapa.swift in Sources */,
 				79A8D5252073ACDC00538062 /* VCRegister.swift in Sources */,
 				79E203262063B7D6003B2EA3 /* ViewController.swift in Sources */,

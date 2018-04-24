@@ -9,9 +9,18 @@
 import UIKit
 
 class VCPrincipal: UIViewController {
+    
+    @IBOutlet var btnInfo:UIButton?
+    @IBOutlet var btnIngreso:UIButton?
+    @IBOutlet var btnGasto:UIButton?
+    @IBOutlet var btnMenu:UIButton?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        btnInfo?.layer.cornerRadius = 15
+        btnIngreso?.layer.cornerRadius = 15
+        btnGasto?.layer.cornerRadius = 15
+        btnMenu?.layer.cornerRadius = 15
 
         // Do any additional setup after loading the view.
     }

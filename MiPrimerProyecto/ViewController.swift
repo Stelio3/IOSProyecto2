@@ -43,8 +43,10 @@ class ViewController: UIViewController, DataHolderDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    func DHDLoginOk() {
-        print("Login Hecho Correctamente")
+    func DHDLoginOk(blLogin: Bool) {
+        if blLogin {
+            self.performSegue(withIdentifier: "trlogin", sender: self)
+        }
     }
     
     @IBAction func eventoClickLogin(delegate: DataHolderDelegate){
@@ -54,23 +56,7 @@ class ViewController: UIViewController, DataHolderDelegate {
        // else{
           //  txtVConsola?.text=String(format: "Usuario incorrecto: Esperaba en usuario: Pablo y contraseña: 123 e introdujo usuario: %@ y contaseña: %@", (txtUser?.text)!,(txtPass?.text)!)
         
-        Auth.auth().signIn(withEmail: (txtUser?.text)!, password: (txtPass?.text)!) { (user, error) in
-            if user != nil{
-               let ruta = DataHolder.sharedInstance.FireStoreDB?.collection("Perfiles").document((user?.uid)!)
-                ruta?.getDocument { (document, error) in
-                    if document != nil{
-                        DataHolder.sharedInstance.miPerfil.setMap(valores: (document?.data())!)
-                        self.performSegue(withIdentifier: "trlogin", sender: self)
-                    }else{
-                        print(error!)
-                    }
-                }
-            }
-            else{
-               print("NO SE HA LOGUEADO!")
-                print(error!)
-            }
-        }
+       DataHolder.sharedInstance.eventoClickLoginDH(email: (txtUser?.text)!, pass: (txtPass?.text)!, delegate: self )
     }
 
 }

@@ -20,6 +20,7 @@ class DataHolder: NSObject {
     var miPerfil:Perfil = Perfil()
     var arCiudades:[City] = []
     var arPerfiles:[Perfil] = []
+
     
     
     
@@ -98,9 +99,44 @@ class DataHolder: NSObject {
                 }
         }
     }
+    func eventoClickLoginDH(email:String, pass:String, delegate: DataHolderDelegate){
+        Auth.auth().signIn(withEmail: (email), password: (pass)) { (user, error) in
+            if user != nil{
+                let ruta = self.FireStoreDB?.collection("Perfiles").document((user?.uid)!)
+                ruta?.getDocument { (document, error) in
+                    if document != nil{
+                        self.miPerfil.setMap(valores: (document?.data())!)
+                        delegate.DHDLoginOk!(blLogin: true)
+                        
+                    }else{
+                        print(error!)
+                        delegate.DHDLoginOk!(blLogin: false)
+                    }
+                }
+            }
+            else{
+                print("NO SE HA LOGUEADO!")
+                print(error!)
+            }
+        }
+    }
+    func clickRegistrarDH(emailR:String, passR:String, repassR:String, delegate: DataHolderDelegate){
+        Auth.auth().createUser(withEmail: (emailR), password: (passR)) { (User, error) in
+            if (User != nil) && (passR == repassR){
+                print("Te registraste")
+                self.FireStoreDB?.collection("Perfiles").document((User?.uid)!).setData(self.miPerfil.getMap())
+                delegate.DHDRegisterOk!(blRegister: true)
+            }else{
+                print(error!)
+                delegate.DHDRegisterOk!(blRegister: false)
+            }
+        }
+        print("HOLA!!" )
+    }
 }
 
 @objc protocol DataHolderDelegate{
     @objc optional func DHDDescargaCiudadesCompleta(blFin:Bool)
     @objc optional func DHDLoginOk(blLogin:Bool)
+    @objc optional func DHDRegisterOk(blRegister:Bool)
 }

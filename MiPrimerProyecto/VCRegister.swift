@@ -31,20 +31,17 @@ class VCRegister: UIViewController, DataHolderDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    func DHDRegisterOk(blRegister: Bool) {
+        if blRegister{
+            self.performSegue(withIdentifier: "trregister", sender: self)
+        }
+    }
+    
     @IBAction func clickRegistrar(){
         DataHolder.sharedInstance.miPerfil.sNombre = txtUsureg?.text
         DataHolder.sharedInstance.miPerfil.sEmail = txtEmail?.text
         
-        Auth.auth().createUser(withEmail: (txtUsureg?.text)!, password: (txtPassReg?.text)!) { (User, error) in
-            if User != nil{
-                print("Te registraste")
-                self.performSegue(withIdentifier: "trregister", sender: self)
-                DataHolder.sharedInstance.FireStoreDB?.collection("Perfiles").document((User?.uid)!).setData(DataHolder.sharedInstance.miPerfil.getMap())
-            }else{
-                print(error!)
-            }
-        }
-        print("HOLA!!" )
+        DataHolder.sharedInstance.clickRegistrarDH(emailR: (txtEmail?.text)!, passR: (txtPassReg?.text)!, repassR: (txtRepPass?.text)!, delegate: self)
     }
 
     /*

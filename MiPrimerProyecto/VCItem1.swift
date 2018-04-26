@@ -8,40 +8,33 @@
 
 import UIKit
 
-class VCItem1: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class VCItem1: UIViewController, UITableViewDelegate, UITableViewDataSource, DataHolderDelegate {
 
     @IBOutlet var tabla:UITableView?
    // var arCiudades:[City] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        DataHolder.sharedInstance.FireStoreDB?.collection("cities")
-            .addSnapshotListener { (querySnapshot, err) in
-                if let err = err {
-                    print("Error getting documents: \(err)")
-                } else {
-                    DataHolder.sharedInstance.arCiudades=[]
-                    for document in querySnapshot!.documents {
-                        let ciudad:City = City()
-                        ciudad.sID=document.documentID
-                        ciudad.setMap(valores: document.data())
-                        DataHolder.sharedInstance.arCiudades.append(ciudad)
-                        
-                        print("\(document.documentID) => \(document.data())")
-                    }
-                    print(DataHolder.sharedInstance.arCiudades.count)
-                    self.refreshUI()
-                    
-                    
-            }
-        }
+        DataHolder.sharedInstance.descargarCiudades(delegate: self)
+        /*if(blRes){
+            print("descargado")
+            self.refreshUI()
+            
+        }else{
+            print("no descargados")
+        }*/
         // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func DHDDescargaCiudadesCompleta(blFin: Bool) {
+        if blFin{
+            self.refreshUI()
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

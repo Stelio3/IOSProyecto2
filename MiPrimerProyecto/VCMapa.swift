@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class VCMapa: UIViewController, CLLocationManagerDelegate {
+class VCMapa: UIViewController, CLLocationManagerDelegate{
     @IBOutlet var miMap:MKMapView?
     var locationManager:CLLocationManager?
     
@@ -34,7 +34,7 @@ class VCMapa: UIViewController, CLLocationManagerDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+
     func AgregarPin(titulo:String, latitude lat: Double, longitude lon:Double ) {
         let miPin:MKPointAnnotation=MKPointAnnotation()
         miPin.coordinate.latitude=lat

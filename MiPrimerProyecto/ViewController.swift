@@ -9,7 +9,7 @@
 import UIKit
 import FirebaseAuth
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, DataHolderDelegate {
 
     @IBOutlet var txtUser:UITextField?
     @IBOutlet var txtPass:UITextField?
@@ -43,7 +43,11 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    @IBAction func eventoClickLogin(){
+    func DHDLoginOk() {
+        print("Login Hecho Correctamente")
+    }
+    
+    @IBAction func eventoClickLogin(delegate: DataHolderDelegate){
         //if txtUser?.text == "Pablo" && txtPass?.text == "123"{
           //  self.performSegue(withIdentifier: "tran1", sender: self)
       //  }

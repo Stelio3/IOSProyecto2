@@ -9,7 +9,7 @@
 import UIKit
 import FirebaseAuth
 
-class VCRegister: UIViewController {
+class VCRegister: UIViewController, DataHolderDelegate {
 
     @IBOutlet var txtUsureg:UITextField?
     @IBOutlet var txtPassReg:UITextField?

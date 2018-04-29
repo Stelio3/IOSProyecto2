@@ -15,7 +15,6 @@ class ViewController: UIViewController, DataHolderDelegate {
     @IBOutlet var txtPass:UITextField?
     @IBOutlet var btnRegistra:UIButton?
     @IBOutlet var btnLogin:UIButton?
-    @IBOutlet var txtVConsola:UITextView?
     
     
     override func viewDidLoad() {

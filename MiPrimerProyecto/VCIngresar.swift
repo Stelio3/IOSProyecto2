@@ -10,6 +10,9 @@ import UIKit
 
 class VCIngresar: UIViewController {
 
+    @IBOutlet var btnGuardarIngreso:UIButton?
+    @IBOutlet var btnCancelarIngreso:UIButton?
+
     override func viewDidLoad() {
         super.viewDidLoad()
 

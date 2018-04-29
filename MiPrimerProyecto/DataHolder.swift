@@ -80,7 +80,7 @@ class DataHolder: NSObject {
             .addSnapshotListener { (querySnapshot, err) in
                 if let err = err {
                     print("Error getting documents: \(err)")
-                    delegate.DHDDescargaCiudadesCompleta!(blFin: false)
+                    delegate.DHDDescargaCiudadesCompleta!(blFinCiudades: false)
                 } else {
                     self.arCiudades=[]
                     for document in querySnapshot!.documents {
@@ -92,12 +92,36 @@ class DataHolder: NSObject {
                         print("\(document.documentID) => \(document.data())")
                     }
                     print(self.arCiudades.count)
-                    delegate.DHDDescargaCiudadesCompleta!(blFin: true)
+                    delegate.DHDDescargaCiudadesCompleta!(blFinCiudades: true)
                     //self.refreshUI()
                     
                     
                 }
         }
+    }
+    func descargarPerfiles(delegate: DataHolderDelegate){
+        self.FireStoreDB?.collection("Perfiles")
+            .addSnapshotListener { (querySnapshot, err) in
+                if let err = err {
+                    print("Error getting documents: \(err)")
+                    delegate.DHDDescargaPerfilesCompleta!(blFinPerfiles: false)
+                } else {
+                    self.arPerfiles=[]
+                    for document in querySnapshot!.documents {
+                        let perfil:Perfil = Perfil()
+                        perfil.sID=document.documentID
+                        perfil.setMap(valores: document.data())
+                        self.arPerfiles.append(perfil)
+                        
+                        print("\(document.documentID) => \(document.data())")
+                    }
+                    print(self.arPerfiles.count)
+                    //self.refreshUI()
+                    delegate.DHDDescargaPerfilesCompleta!(blFinPerfiles: true)
+                }
+                // Do any additional setup after loading the view.
+        }
+        
     }
     func eventoClickLoginDH(email:String, pass:String, delegate: DataHolderDelegate){
         Auth.auth().signIn(withEmail: (email), password: (pass)) { (user, error) in
@@ -136,7 +160,8 @@ class DataHolder: NSObject {
 }
 
 @objc protocol DataHolderDelegate{
-    @objc optional func DHDDescargaCiudadesCompleta(blFin:Bool)
+    @objc optional func DHDDescargaCiudadesCompleta(blFinCiudades:Bool)
+    @objc optional func DHDDescargaPerfilesCompleta(blFinPerfiles:Bool)
     @objc optional func DHDLoginOk(blLogin:Bool)
     @objc optional func DHDRegisterOk(blRegister:Bool)
 }

@@ -31,8 +31,8 @@ class VCItem1: UIViewController, UITableViewDelegate, UITableViewDataSource, Dat
         // Dispose of any resources that can be recreated.
     }
     
-    func DHDDescargaCiudadesCompleta(blFin: Bool) {
-        if blFin{
+    func DHDDescargaCiudadesCompleta(blFinCiudades: Bool) {
+        if blFinCiudades{
             self.refreshUI()
         }
     }

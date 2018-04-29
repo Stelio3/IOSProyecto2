@@ -41,7 +41,7 @@ class VCRegister: UIViewController, DataHolderDelegate {
         DataHolder.sharedInstance.miPerfil.sNombre = txtUsureg?.text
         DataHolder.sharedInstance.miPerfil.sEmail = txtEmail?.text
         
-        DataHolder.sharedInstance.clickRegistrarDH(emailR: (txtEmail?.text)!, passR: (txtPassReg?.text)!, repassR: (txtRepPass?.text)!, delegate: self)
+        DataHolder.sharedInstance.clickRegistrarDH(emailR: (txtEmail?.text)!, passR: (txtPassReg?.text)!, repassR: (txtRepPass?.text)!, name: (txtUsureg?.text)!, delegate: self)
     }
 
     /*

@@ -144,7 +144,7 @@ class DataHolder: NSObject {
             }
         }
     }
-    func clickRegistrarDH(emailR:String, passR:String, repassR:String, delegate: DataHolderDelegate){
+    func clickRegistrarDH(emailR:String, passR:String, repassR:String, name:String, delegate: DataHolderDelegate){
         Auth.auth().createUser(withEmail: (emailR), password: (passR)) { (User, error) in
             if (User != nil) && (passR == repassR){
                 print("Te registraste")

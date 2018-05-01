@@ -372,7 +372,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7tA-xb-GLl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-868" y="-1258.0209895052474"/>
+            <point key="canvasLocation" x="-884" y="-1258"/>
         </scene>
         <!--Principal-->
         <scene sceneID="ucN-y3-ePs">
@@ -407,13 +407,13 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gDY-ED-0te">
-                                <rect key="frame" x="312" y="53" width="47" height="42"/>
+                                <rect key="frame" x="296" y="42" width="63" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.070483174526638104" green="0.69951731103242043" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Info"/>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo IGAhorros" translatesAutoresizingMaskIntoConstraints="NO" id="LrF-VT-ciF">
-                                <rect key="frame" x="81" y="136" width="213" height="128"/>
+                                <rect key="frame" x="16" y="42" width="106" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>

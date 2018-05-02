@@ -521,7 +521,6 @@
         <image name="logo IGAhorros" width="1181" height="1181"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="gvE-OL-Grq"/>
         <segue reference="Kaz-oy-lU9"/>
     </inferredMetricsTieBreakers>
 </document>

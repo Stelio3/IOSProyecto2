@@ -20,6 +20,7 @@ class DataHolder: NSObject {
     var miPerfil:Perfil = Perfil()
     var arCiudades:[City] = []
     var arPerfiles:[Perfil] = []
+    var hmImagenesDescargadas:[String:UIImage]?=[:]
 
     
     
@@ -68,6 +69,32 @@ class DataHolder: NSObject {
     
     func initLocationAdmin(){
         locationAdmin=LocationAdmin()
+    }
+    func getImage(clave:String, getDelegate delegate:DataHolderDelegate){
+        if self.hmImagenesDescargadas?[clave] == nil{
+            let gsReference = self.firStorage?.reference(forURL: clave)
+            
+            // Download in memory with a maximum allowed size of 1MB (1 * 1024 * 1024 bytes)
+            gsReference?.getData(maxSize: 1 * 1024 * 1024) { data, error in
+                if error != nil{
+                    // Uh-oh, an error occurred!
+                } else {
+                    // Data for "images/island.jpg" is returned
+                    let image = UIImage(data: data!)
+                    self.hmImagenesDescargadas?[clave] = image
+                    delegate.DHDImagenDescargada!(imagen: image!)
+                }
+            }
+            // }
+        }
+        else{
+            delegate.DHDImagenDescargada!(imagen: (self.hmImagenesDescargadas?[clave])!)
+            
+        }
+        
+    }
+    func setDownloadedImage(clave:String, imagenDes image:UIImage) {
+        hmImagenesDescargadas![clave]=image
     }
     func nombreDeCelda(numero:Int) -> NSString {
         if(numero == 0){
@@ -164,4 +191,6 @@ class DataHolder: NSObject {
     @objc optional func DHDDescargaPerfilesCompleta(blFinPerfiles:Bool)
     @objc optional func DHDLoginOk(blLogin:Bool)
     @objc optional func DHDRegisterOk(blRegister:Bool)
+    @objc optional func DHDImagenDescargada(imagen:UIImage)
+    
 }

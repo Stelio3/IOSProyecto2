@@ -10,17 +10,13 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class VCMapa: UIViewController, CLLocationManagerDelegate{
+class VCMapa: UIViewController, CLLocationManagerDelegate, DataHolderDelegate{
     @IBOutlet var miMap:MKMapView?
     var locationManager:CLLocationManager?
     
     override func viewDidLoad() {
-        for ciudades in DataHolder.sharedInstance.arCiudades{
-            if ciudades.iLatitude != nil{
-                self.AgregarPin(titulo: ciudades.sName!, latitude: ciudades.iLatitude!, longitude: ciudades.iLongitud!)
-            }
-        }
         super.viewDidLoad()
+        DataHolder.sharedInstance.descargarCiudades(delegate: self)
         self.nuevaRegionMapa(latitude: 40.5, longitude: -3.666667)
         locationManager = CLLocationManager()
         locationManager?.delegate=self
@@ -33,6 +29,17 @@ class VCMapa: UIViewController, CLLocationManagerDelegate{
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func DHDDescargaCiudadesCompleta(blFinCiudades: Bool) {
+        if blFinCiudades{
+        for ciudades in DataHolder.sharedInstance.arCiudades{
+            if ciudades.iLatitude != nil{
+                self.AgregarPin(titulo: ciudades.sName!, latitude: ciudades.iLatitude!, longitude: ciudades.iLongitud!)
+            }
+        }
+        }
+        
     }
 
     func AgregarPin(titulo:String, latitude lat: Double, longitude lon:Double ) {

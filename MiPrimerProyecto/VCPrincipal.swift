@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import GTProgressBar
 
 class VCPrincipal: UIViewController {
     
+    @IBOutlet var ProgressBar:GTProgressBar?
     @IBOutlet var btnInfo:UIButton?
     @IBOutlet var btnIngreso:UIButton?
     @IBOutlet var btnGasto:UIButton?

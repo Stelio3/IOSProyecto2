@@ -10,6 +10,9 @@ import UIKit
 
 class VCIngresar: UIViewController {
 
+    
+    @IBOutlet var txtCantIngreso:UITextField?
+    @IBOutlet var txtANotaIngreso:UITextView?
     @IBOutlet var btnGuardarIngreso:UIButton?
     @IBOutlet var btnCancelarIngreso:UIButton?
 

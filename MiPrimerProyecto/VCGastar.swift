@@ -9,7 +9,12 @@
 import UIKit
 
 class VCGastar: UIViewController {
-
+    
+    @IBOutlet var txtCantGasto:UITextField?
+    @IBOutlet var txtANotaGasto:UITextView?
+    @IBOutlet var btnGuardarGasto:UIButton?
+    @IBOutlet var btnCancelarGasto:UIButton?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

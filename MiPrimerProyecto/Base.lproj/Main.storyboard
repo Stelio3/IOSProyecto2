@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="t2a-Q5-Xep">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="YL9-hk-T8D">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -633,30 +633,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8L5-5G-3EO">
-                                <rect key="frame" x="16" y="38" width="343" height="53"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v2r-ta-feD">
+                                <rect key="frame" x="0.0" y="117" width="375" height="530"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo IGAhorros" translatesAutoresizingMaskIntoConstraints="NO" id="LrF-VT-ciF">
-                                        <rect key="frame" x="0.0" y="0.0" width="106" height="53"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gDY-ED-0te">
-                                        <rect key="frame" x="280" y="0.0" width="63" height="53"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="0.070483174526638104" green="0.69951731103242043" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" title="Info"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="crv-IN-LBl">
+                                        <rect key="frame" x="81" y="318" width="213" height="34"/>
+                                        <color key="backgroundColor" red="1" green="0.15255521220685764" blue="0.038949273870218959" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="+ Gasto">
+                                            <color key="titleColor" red="0.1070738661" green="0.4673118953" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="TRQ-hw-rWL" kind="show" id="MSp-rw-FAZ"/>
+                                        </connections>
                                     </button>
-                                </subviews>
-                                <color key="backgroundColor" red="0.87767779830000003" green="0.89285361770000005" blue="0.96751731630000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dzK-Wk-m1T">
-                                <rect key="frame" x="0.0" y="152" width="375" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="D5T-yA-qc0" customClass="GTProgressBar" customModule="GTProgressBar">
-                                        <rect key="frame" x="81" y="37" width="213" height="51"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mHV-8f-lXY">
+                                        <rect key="frame" x="81" y="213" width="213" height="34"/>
+                                        <color key="backgroundColor" red="0.03013279815733616" green="1" blue="0.090853142606567294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="+ Ingreso">
+                                            <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="ekl-bJ-uF1" kind="show" id="gvE-OL-Grq"/>
+                                        </connections>
+                                    </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D5T-yA-qc0" customClass="GTProgressBar" customModule="GTProgressBar">
+                                        <rect key="frame" x="81" y="51" width="213" height="51"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="barFillColor">
                                                 <color key="value" red="0.030132798160000002" green="1" blue="0.090853142610000007" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -688,59 +689,26 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Gastos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="McZ-MJ-q70">
-                                        <rect key="frame" x="313" y="54" width="54" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gastos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="McZ-MJ-q70">
+                                        <rect key="frame" x="313" y="66" width="54" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ingresos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oxU-wf-MrM">
-                                        <rect key="frame" x="8" y="52" width="66" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingresos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oxU-wf-MrM">
+                                        <rect key="frame" x="7" y="66" width="66" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Progress Bar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yMN-7C-sAt">
-                                        <rect key="frame" x="138" y="8" width="99" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Progress Bar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yMN-7C-sAt">
+                                        <rect key="frame" x="138" y="22" width="99" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                </subviews>
-                                <color key="backgroundColor" red="0.87767779830000003" green="0.89285361770000005" blue="0.96751731630000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v2r-ta-feD">
-                                <rect key="frame" x="67" y="327" width="240" height="243"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="crv-IN-LBl">
-                                        <rect key="frame" x="14" y="98" width="213" height="34"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="1" green="0.15255521220685764" blue="0.038949273870218959" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" title="+ Gasto">
-                                            <color key="titleColor" red="0.1070738661" green="0.4673118953" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <segue destination="TRQ-hw-rWL" kind="show" id="MSp-rw-FAZ"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mHV-8f-lXY">
-                                        <rect key="frame" x="14" y="8" width="213" height="34"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="0.03013279815733616" green="1" blue="0.090853142606567294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" title="+ Ingreso">
-                                            <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <segue destination="ekl-bJ-uF1" kind="show" id="gvE-OL-Grq"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SMq-sB-yBO">
-                                        <rect key="frame" x="14" y="189" width="213" height="34"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SMq-sB-yBO">
+                                        <rect key="frame" x="81" y="429" width="213" height="34"/>
                                         <color key="backgroundColor" red="1" green="0.81794669760000005" blue="0.44438895020000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Menú">
                                             <color key="titleColor" red="0.070483174529999998" green="0.69951731100000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -751,15 +719,42 @@
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.8776777982711792" green="0.89285361766815186" blue="0.96751731634140015" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="yMN-7C-sAt" firstAttribute="centerX" secondItem="D5T-yA-qc0" secondAttribute="centerX" id="2PP-iY-uda"/>
+                                    <constraint firstItem="mHV-8f-lXY" firstAttribute="trailing" secondItem="crv-IN-LBl" secondAttribute="trailing" id="3uS-WO-AON"/>
+                                    <constraint firstItem="oxU-wf-MrM" firstAttribute="top" secondItem="v2r-ta-feD" secondAttribute="top" constant="66" id="6wg-dF-wf5"/>
+                                    <constraint firstItem="D5T-yA-qc0" firstAttribute="top" secondItem="yMN-7C-sAt" secondAttribute="bottom" constant="8" symbolic="YES" id="71s-p2-6FG"/>
+                                    <constraint firstItem="D5T-yA-qc0" firstAttribute="leading" secondItem="mHV-8f-lXY" secondAttribute="leading" id="9jj-6R-6GC"/>
+                                    <constraint firstItem="yMN-7C-sAt" firstAttribute="centerX" secondItem="v2r-ta-feD" secondAttribute="centerX" id="B61-Qh-e7p"/>
+                                    <constraint firstItem="D5T-yA-qc0" firstAttribute="centerY" secondItem="McZ-MJ-q70" secondAttribute="centerY" id="CAZ-zy-ZG3"/>
+                                    <constraint firstItem="D5T-yA-qc0" firstAttribute="trailing" secondItem="mHV-8f-lXY" secondAttribute="trailing" id="FBe-GL-4jX"/>
+                                    <constraint firstItem="McZ-MJ-q70" firstAttribute="leading" secondItem="D5T-yA-qc0" secondAttribute="trailing" constant="19" id="GDD-sX-2P3"/>
+                                    <constraint firstItem="oxU-wf-MrM" firstAttribute="leading" secondItem="v2r-ta-feD" secondAttribute="leading" constant="7" id="Mnz-9G-qXk"/>
+                                    <constraint firstItem="oxU-wf-MrM" firstAttribute="baseline" secondItem="McZ-MJ-q70" secondAttribute="baseline" id="UyK-Z9-OrX"/>
+                                    <constraint firstItem="mHV-8f-lXY" firstAttribute="leading" secondItem="crv-IN-LBl" secondAttribute="leading" id="W5F-UR-5OR"/>
+                                    <constraint firstItem="crv-IN-LBl" firstAttribute="leading" secondItem="SMq-sB-yBO" secondAttribute="leading" id="aOh-R8-wnl"/>
+                                    <constraint firstItem="crv-IN-LBl" firstAttribute="trailing" secondItem="SMq-sB-yBO" secondAttribute="trailing" id="bDU-OO-07T"/>
+                                    <constraint firstItem="SMq-sB-yBO" firstAttribute="top" secondItem="crv-IN-LBl" secondAttribute="bottom" constant="77" id="eMr-vx-CWk"/>
+                                    <constraint firstItem="D5T-yA-qc0" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="oxU-wf-MrM" secondAttribute="trailing" constant="8" symbolic="YES" id="jcP-l5-GxI"/>
+                                    <constraint firstAttribute="bottom" secondItem="SMq-sB-yBO" secondAttribute="bottom" constant="67" id="ju3-kJ-CTQ"/>
+                                    <constraint firstItem="McZ-MJ-q70" firstAttribute="trailing" secondItem="v2r-ta-feD" secondAttribute="trailingMargin" id="m2G-oJ-RoN"/>
+                                    <constraint firstItem="yMN-7C-sAt" firstAttribute="top" secondItem="v2r-ta-feD" secondAttribute="top" constant="22" id="qr7-a5-5hO"/>
+                                    <constraint firstItem="crv-IN-LBl" firstAttribute="top" secondItem="mHV-8f-lXY" secondAttribute="bottom" constant="71" id="tae-OB-exh"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.8776777982711792" green="0.89285361766815186" blue="0.96751731634140015" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="v2r-ta-feD" firstAttribute="top" secondItem="IoZ-kW-ue4" secondAttribute="top" constant="117" id="1vk-rZ-ffb"/>
+                            <constraint firstAttribute="trailing" secondItem="v2r-ta-feD" secondAttribute="trailing" id="FOR-dQ-PoO"/>
+                            <constraint firstAttribute="bottom" secondItem="v2r-ta-feD" secondAttribute="bottom" constant="20" symbolic="YES" id="qOz-Qn-2Ve"/>
+                            <constraint firstItem="v2r-ta-feD" firstAttribute="leading" secondItem="IoZ-kW-ue4" secondAttribute="leading" id="xgr-6k-btl"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="adc-ei-Ib5"/>
                     </view>
                     <connections>
                         <outlet property="ProgressBar" destination="D5T-yA-qc0" id="i5V-nr-Ej7"/>
                         <outlet property="btnGasto" destination="crv-IN-LBl" id="kSO-Rp-nt5"/>
-                        <outlet property="btnInfo" destination="gDY-ED-0te" id="U8C-4t-9ya"/>
                         <outlet property="btnIngreso" destination="mHV-8f-lXY" id="xYq-5E-xHh"/>
                         <outlet property="btnMenu" destination="SMq-sB-yBO" id="rjN-2I-Gs9"/>
                     </connections>
@@ -874,10 +869,8 @@
             <point key="canvasLocation" x="782" y="-1258"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="logo IGAhorros" width="1181" height="1181"/>
-    </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="RT7-dI-LQY"/>
         <segue reference="LnX-IQ-vbI"/>
     </inferredMetricsTieBreakers>
 </document>

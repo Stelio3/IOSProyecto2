@@ -24,6 +24,7 @@ class VCPrincipal: UIViewController {
         btnGasto?.layer.cornerRadius = 15
         btnMenu?.layer.cornerRadius = 15
 
+        ProgressBar?.progress = 0.1
         // Do any additional setup after loading the view.
     }
 

@@ -21,7 +21,8 @@ class DataHolder: NSObject {
     var arCiudades:[City] = []
     var arPerfiles:[Perfil] = []
     var hmImagenesDescargadas:[String:UIImage]?=[:]
-
+    var user:String?
+    var pass:String?
     
     
     
@@ -69,6 +70,18 @@ class DataHolder: NSObject {
     
     func initLocationAdmin(){
         locationAdmin=LocationAdmin()
+    }
+    func loadData() {
+        let props = UserDefaults.standard
+        user = props.string(forKey: "User_login")
+        pass = props.string(forKey: "Password_login")
+    }
+    
+    func saveData() {
+        let props = UserDefaults.standard
+        props.setValue(user, forKey: "User_login")
+        props.setValue(pass, forKey: "Password_login")
+        props.synchronize()
     }
     func getImage(clave:String, getDelegate delegate:DataHolderDelegate){
         if self.hmImagenesDescargadas?[clave] == nil{

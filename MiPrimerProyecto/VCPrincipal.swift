@@ -8,6 +8,7 @@
 
 import UIKit
 import GTProgressBar
+import FirebaseAuth
 
 class VCPrincipal: UIViewController {
     
@@ -32,7 +33,15 @@ class VCPrincipal: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+    @IBAction func accionSalir(){
+        do{
+            try Auth.auth().signOut()
+            self.dismiss(animated: true, completion: nil)
+        }
+        catch let err {
+            print(err)
+        }
+    }
 
     /*
     // MARK: - Navigation

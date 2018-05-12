@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		320486CC20A6EC9200B9FD9F /* NuevoTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320486CB20A6EC9200B9FD9F /* NuevoTextField.swift */; };
 		327E7EA02096725A0014ED39 /* VCIngresar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327E7E9F2096725A0014ED39 /* VCIngresar.swift */; };
 		32838260207FC28800731DF4 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3283825F207FC28800731DF4 /* MapKit.framework */; };
 		32838262207FC30000731DF4 /* VCMapa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32838261207FC30000731DF4 /* VCMapa.swift */; };
@@ -33,6 +34,7 @@
 
 /* Begin PBXFileReference section */
 		162DAD0345B9790C7DE23412 /* Pods-MiPrimerProyecto.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MiPrimerProyecto.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MiPrimerProyecto/Pods-MiPrimerProyecto.debug.xcconfig"; sourceTree = "<group>"; };
+		320486CB20A6EC9200B9FD9F /* NuevoTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NuevoTextField.swift; sourceTree = "<group>"; };
 		327E7E9F2096725A0014ED39 /* VCIngresar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCIngresar.swift; sourceTree = "<group>"; };
 		3283825F207FC28800731DF4 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		32838261207FC30000731DF4 /* VCMapa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCMapa.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				32838261207FC30000731DF4 /* VCMapa.swift */,
 				798B76E6207F871E003F39D3 /* Perfil.swift */,
 				3296946C2083555600C5BC25 /* City.swift */,
+				320486CB20A6EC9200B9FD9F /* NuevoTextField.swift */,
 				79504F90207CE19700EF65C7 /* DataHolder.swift */,
 				79E2032D2063B7D6003B2EA3 /* Assets.xcassets */,
 				79504F8E207CDBB800EF65C7 /* GoogleService-Info.plist */,
@@ -301,6 +304,7 @@
 				79DC502A208F4BDF00C70874 /* VCPrincipal.swift in Sources */,
 				79146E5B20A1C9B90063368E /* VCGastar.swift in Sources */,
 				32838262207FC30000731DF4 /* VCMapa.swift in Sources */,
+				320486CC20A6EC9200B9FD9F /* NuevoTextField.swift in Sources */,
 				79A8D5252073ACDC00538062 /* VCRegister.swift in Sources */,
 				79E203262063B7D6003B2EA3 /* ViewController.swift in Sources */,
 				798B76E7207F871E003F39D3 /* Perfil.swift in Sources */,

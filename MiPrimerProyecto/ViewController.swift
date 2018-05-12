@@ -11,14 +11,15 @@ import FirebaseAuth
 
 class ViewController: UIViewController, DataHolderDelegate {
 
-    @IBOutlet var txtUser:UITextField?
-    @IBOutlet var txtPass:UITextField?
+    @IBOutlet var txtUser:NuevoTextField?
+    @IBOutlet var txtPass:NuevoTextField?
     @IBOutlet var btnRegistra:UIButton?
     @IBOutlet var btnLogin:UIButton?
     @IBOutlet var recordad:UISwitch?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hideKeyBoardWhenTappedAround()
         btnRegistra?.layer.cornerRadius = 10
         btnLogin?.layer.cornerRadius = 10
         // Do any additional setup after loading the view, typically from a nib.

@@ -11,14 +11,14 @@ import UIKit
 class VCIngresar: UIViewController {
 
     
-    @IBOutlet var txtCantIngreso:UITextField?
+    @IBOutlet var txtCantIngreso:NuevoTextField?
     @IBOutlet var txtANotaIngreso:UITextView?
     @IBOutlet var btnGuardarIngreso:UIButton?
     @IBOutlet var btnCancelarIngreso:UIButton?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.hideKeyBoardWhenTappedAround()
         // Do any additional setup after loading the view.
     }
 

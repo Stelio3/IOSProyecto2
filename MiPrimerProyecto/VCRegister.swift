@@ -11,10 +11,10 @@ import FirebaseAuth
 
 class VCRegister: UIViewController, DataHolderDelegate {
 
-    @IBOutlet var txtUsureg:UITextField?
-    @IBOutlet var txtPassReg:UITextField?
-    @IBOutlet var txtRepPass:UITextField?
-    @IBOutlet var txtEmail:UITextField?
+    @IBOutlet var txtUsureg:NuevoTextField?
+    @IBOutlet var txtPassReg:NuevoTextField?
+    @IBOutlet var txtRepPass:NuevoTextField?
+    @IBOutlet var txtEmail:NuevoTextField?
     @IBOutlet var btnSingIn:UIButton?
     @IBOutlet var btnGoLogin:UIButton?
     
@@ -28,6 +28,7 @@ class VCRegister: UIViewController, DataHolderDelegate {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+        self.hideKeyBoardWhenTappedAround()
         // Dispose of any resources that can be recreated.
     }
     

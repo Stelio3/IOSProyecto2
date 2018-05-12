@@ -199,6 +199,17 @@ class DataHolder: NSObject {
     }
 }
 
+extension UIViewController{
+    func hideKeyBoardWhenTappedAround() {
+        let tap:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+}
+
 @objc protocol DataHolderDelegate{
     @objc optional func DHDDescargaCiudadesCompleta(blFinCiudades:Bool)
     @objc optional func DHDDescargaPerfilesCompleta(blFinPerfiles:Bool)

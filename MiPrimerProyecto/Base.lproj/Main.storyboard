@@ -305,6 +305,54 @@
             </objects>
             <point key="canvasLocation" x="-34.399999999999999" y="-2030.7346326836582"/>
         </scene>
+        <!--Galeria-->
+        <scene sceneID="4Tm-H7-gbC">
+            <objects>
+                <viewController id="HdZ-Zo-q8x" customClass="VCGaleria" customModule="MiPrimerProyecto" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kdP-Sd-MJW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ti4-ds-FEb">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="284"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JKx-8T-XfY">
+                                <rect key="frame" x="16" y="292" width="130" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Seleccionar galeria"/>
+                                <connections>
+                                    <action selector="accionBotonGaleria" destination="HdZ-Zo-q8x" eventType="touchUpInside" id="P43-NS-XxJ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EtY-3S-5gL">
+                                <rect key="frame" x="224" y="292" width="135" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Seleccionar camara"/>
+                                <connections>
+                                    <action selector="accionBotonCamara" destination="HdZ-Zo-q8x" eventType="touchUpInside" id="Hvt-lL-PIp"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mge-4v-dsd">
+                                <rect key="frame" x="26" y="343" width="111" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Subir a Firebase"/>
+                                <connections>
+                                    <action selector="accionBotonSubir" destination="HdZ-Zo-q8x" eventType="touchUpInside" id="b3i-SG-3wj"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="hUF-Ef-Dqs"/>
+                    </view>
+                    <connections>
+                        <outlet property="imgView" destination="ti4-ds-FEb" id="mcy-qg-a7d"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Yzn-w9-dB8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="781.60000000000002" y="-561.76911544227892"/>
+        </scene>
         <!--Mapa-->
         <scene sceneID="kPH-Rg-0ZY">
             <objects>

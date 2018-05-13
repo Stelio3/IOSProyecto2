@@ -17,6 +17,7 @@ class DataHolder: NSObject {
     var sNick:String = "Yony"
     var FireStoreDB:Firestore?
     var firStorage:Storage?
+    var fireStorageRef:StorageReference?
     var miPerfil:Perfil = Perfil()
     var arCiudades:[City] = []
     var arPerfiles:[Perfil] = []
@@ -30,7 +31,7 @@ class DataHolder: NSObject {
         FirebaseApp.configure()
         FireStoreDB = Firestore.firestore()
         firStorage = Storage.storage()
-        
+        fireStorageRef = firStorage?.reference()
         /*let citiesRef = FireStoreDB?.collection("cities")
         
         citiesRef?.document("SF").setData([

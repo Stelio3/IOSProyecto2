@@ -24,7 +24,7 @@ class DataHolder: NSObject {
     var hmImagenesDescargadas:[String:UIImage]?=[:]
     var user:String?
     var pass:String?
-    
+    var firUser:User?
     
     
     func initFireBase(){
@@ -198,6 +198,31 @@ class DataHolder: NSObject {
         }
         print("HOLA!!" )
     }
+    func borrarCuenta(delegate:DataHolderDelegate){
+        let user = self.firUser
+        
+        user?.delete { error in
+            if let error = error {
+                // An error happened.
+            } else {
+                // Account deleted.
+                self.FireStoreDB?.collection("Perfiles").document((user?.uid)!).delete() { err in
+                    if let err = err {
+                        print("Error removing document: \(err)")
+                    } else {
+                        print("Document successfully removed!")
+                        delegate.DHDBorrar!(blfin: true)
+                        //self.performSegue(withIdentifier: "borrarcuenta", sender: self)
+                    }
+                }
+                print("cuenta borrada")
+                
+            }
+        }
+    }
+    func saveUser() {
+        self.FireStoreDB?.collection("Perfiles").document((firUser?.uid)!).setData(DataHolder.sharedInstance.miPerfil.getMap())
+    }
 }
 
 extension UIViewController{
@@ -217,5 +242,5 @@ extension UIViewController{
     @objc optional func DHDLoginOk(blLogin:Bool)
     @objc optional func DHDRegisterOk(blRegister:Bool)
     @objc optional func DHDImagenDescargada(imagen:UIImage)
-    
+    @objc optional func DHDBorrar(blfin:Bool)
 }

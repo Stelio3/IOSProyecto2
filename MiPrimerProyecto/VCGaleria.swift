@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 
+
 class VCGaleria: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, DataHolderDelegate{
 
     @IBOutlet var imgView:UIImageView?
@@ -26,17 +27,17 @@ class VCGaleria: UIViewController, UIImagePickerControllerDelegate, UINavigation
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    @IBAction func accionSalir(){
+    /*@IBAction func accionSalir(){
         if DataHolder.sharedInstance.accionSalir() {
             self.performSegue(withIdentifier: "salir", sender: self)
         }
-    }
+    }*/
     
-    func DHDBorrar(blfin: Bool) {
+    /*func DHDBorrar(blfin: Bool) {
         if blfin{
             self.performSegue(withIdentifier: "salir", sender: self)
         }
-    }
+    }*/
     @IBAction func accionBorrar(){
         DataHolder.sharedInstance.borrarCuenta(delegate: self)
     }
@@ -63,9 +64,9 @@ class VCGaleria: UIViewController, UIImagePickerControllerDelegate, UINavigation
                     return
                 }
                 let downloadURL = metadata.downloadURL()
+                print("Mi url: ",downloadURL)
                 DataHolder.sharedInstance.miPerfil.sImage = downloadURL?.absoluteString
                 DataHolder.sharedInstance.saveUser()
-                //DataHolder.sharedInstance.miPerfil.idurlimg = downloadURL.
             }
         }
     }

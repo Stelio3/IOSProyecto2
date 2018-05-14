@@ -19,13 +19,19 @@ class VCPrincipal: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        btnInfo?.layer.cornerRadius = 15
         btnIngreso?.layer.cornerRadius = 15
         btnGasto?.layer.cornerRadius = 15
         btnMenu?.layer.cornerRadius = 15
-
-        ProgressBar?.progress = 0.1
-        // Do any additional setup after loading the view.
+        
+        if DataHolder.sharedInstance.GuardaIng != nil && DataHolder.sharedInstance.GuardaGas == nil{
+            DataHolder.sharedInstance.GuardaGas = 0
+        }
+        else if DataHolder.sharedInstance.GuardaIng == nil && DataHolder.sharedInstance.GuardaGas != nil{
+            DataHolder.sharedInstance.GuardaIng = 0
+        }
+        else if DataHolder.sharedInstance.GuardaIng != nil && DataHolder.sharedInstance.GuardaGas != nil{
+        ProgressBar?.progress = CGFloat(DataHolder.sharedInstance.GuardaIng! / (DataHolder.sharedInstance.GuardaIng! + DataHolder.sharedInstance.GuardaGas!))
+        }
     }
 
     override func didReceiveMemoryWarning() {

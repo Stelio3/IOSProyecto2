@@ -27,6 +27,6 @@ class VCIngresar: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     @IBAction func GuardarIngreso() {
-        DataHolder.sharedInstance.GuardaIng = txtCantIngreso?.text
+        DataHolder.sharedInstance.GuardaIng = Double((txtCantIngreso?.text)!)
     }
 }

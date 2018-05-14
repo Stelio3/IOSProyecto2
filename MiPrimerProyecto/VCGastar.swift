@@ -26,7 +26,7 @@ class VCGastar: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     @IBAction func GuardarGasto(){
-        DataHolder.sharedInstance.GuardaGas = txtCantGasto?.text
+        DataHolder.sharedInstance.GuardaGas = Double((txtCantGasto?.text)!)
     }
 
 }

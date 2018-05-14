@@ -24,7 +24,7 @@ class DataHolder: NSObject {
     var hmImagenesDescargadas:[String:UIImage]?=[:]
     var user:String?
     var pass:String?
-    var firUser:User?
+    //var firUser:User?
     
     
     func initFireBase(){
@@ -198,7 +198,7 @@ class DataHolder: NSObject {
         }
         print("HOLA!!" )
     }
-    func borrarCuenta(delegate:DataHolderDelegate){
+    /*func borrarCuenta(delegate:DataHolderDelegate){
         let user = self.firUser
         
         user?.delete { error in
@@ -219,10 +219,10 @@ class DataHolder: NSObject {
                 
             }
         }
-    }
-    func saveUser() {
+    }*/
+    /*func saveUser() {
         self.FireStoreDB?.collection("Perfiles").document((firUser?.uid)!).setData(DataHolder.sharedInstance.miPerfil.getMap())
-    }
+    }*/
 }
 
 extension UIViewController{

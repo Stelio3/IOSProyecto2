@@ -24,6 +24,8 @@ class DataHolder: NSObject {
     var hmImagenesDescargadas:[String:UIImage]?=[:]
     var user:String?
     var pass:String?
+    var GuardaIng:String?
+    var GuardaGas:String?
     //var firUser:User?
     
     

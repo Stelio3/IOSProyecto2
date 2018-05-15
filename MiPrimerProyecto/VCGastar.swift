@@ -27,7 +27,13 @@ class VCGastar: UIViewController {
     }
     @IBAction func GuardarGasto(){
         DataHolder.sharedInstance.GuardaGas = Double((txtCantGasto?.text)!)
+        if(DataHolder.sharedInstance.GuardaGas != nil){
         self.performSegue(withIdentifier: "trgastar", sender: self)
+        }else{
+            let alerta = UIAlertController(title: "Aviso", message: "El campo azul no puede estar vacío para guardar el gasto", preferredStyle: .alert)
+            alerta.addAction(UIAlertAction(title:"OK", style: .default, handler: nil))
+            self.present(alerta, animated: true, completion: nil)
+        }
     }
 
 }

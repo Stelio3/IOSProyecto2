@@ -28,7 +28,13 @@ class VCIngresar: UIViewController {
     }
     @IBAction func GuardarIngreso() {
         DataHolder.sharedInstance.GuardaIng = Double((txtCantIngreso?.text)!)
-        self.performSegue(withIdentifier: "tringresar", sender: self)
+        if(DataHolder.sharedInstance.GuardaIng != nil){
+            self.performSegue(withIdentifier: "tringresar", sender: self)
+        }else{
+            let alerta = UIAlertController(title: "Aviso", message: "El campo azul no puede estar vacío para guardar el ingreso", preferredStyle: .alert)
+            alerta.addAction(UIAlertAction(title:"OK", style: .default, handler: nil))
+            self.present(alerta, animated: true, completion: nil)
+        }
         
     }
 }

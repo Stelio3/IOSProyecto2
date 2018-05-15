@@ -27,6 +27,7 @@ class VCGastar: UIViewController {
     }
     @IBAction func GuardarGasto(){
         DataHolder.sharedInstance.GuardaGas = Double((txtCantGasto?.text)!)
+        self.performSegue(withIdentifier: "trgastar", sender: self)
     }
 
 }

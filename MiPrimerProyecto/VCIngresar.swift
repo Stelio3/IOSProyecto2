@@ -28,5 +28,7 @@ class VCIngresar: UIViewController {
     }
     @IBAction func GuardarIngreso() {
         DataHolder.sharedInstance.GuardaIng = Double((txtCantIngreso?.text)!)
+        self.performSegue(withIdentifier: "tringresar", sender: self)
+        
     }
 }

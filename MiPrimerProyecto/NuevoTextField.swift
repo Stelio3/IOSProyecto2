@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NuevoTextField: UITextField, UITextFieldDelegate {
+class NuevoTextField: UITextField, UITextFieldDelegate, UITextViewDelegate {
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -20,4 +20,8 @@ class NuevoTextField: UITextField, UITextFieldDelegate {
         self.resignFirstResponder()
         return false
     }
-}
+    
+    func textViewShouldReturn(_ textView: UITextView) -> Bool {
+        self.resignFirstResponder()
+        return false
+    }}

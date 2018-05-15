@@ -12,7 +12,7 @@ class VCIngresar: UIViewController {
 
     
     @IBOutlet var txtCantIngreso:NuevoTextField?
-    @IBOutlet var txtANotaIngreso:UITextView?
+    @IBOutlet var txtANotaIngreso:NuevoTextField?
     @IBOutlet var btnGuardarIngreso:UIButton?
     @IBOutlet var btnCancelarIngreso:UIButton?
 

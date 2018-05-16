@@ -8,7 +8,7 @@
 
 import UIKit
 
-class VCIngresar: UIViewController {
+class VCIngresar: UIViewController, DataHolderDelegate {
 
     
     @IBOutlet var txtCantIngreso:NuevoTextField?
@@ -35,6 +35,5 @@ class VCIngresar: UIViewController {
             alerta.addAction(UIAlertAction(title:"OK", style: .default, handler: nil))
             self.present(alerta, animated: true, completion: nil)
         }
-        
     }
 }

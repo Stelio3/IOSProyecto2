@@ -8,7 +8,7 @@
 
 import UIKit
 
-class VCGastar: UIViewController {
+class VCGastar: UIViewController, DataHolderDelegate {
     
     @IBOutlet var txtCantGasto:NuevoTextField?
     @IBOutlet var txtANotaGasto:UITextView?

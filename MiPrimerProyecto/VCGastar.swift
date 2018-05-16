@@ -32,8 +32,7 @@ class VCGastar: UIViewController, DataHolderDelegate {
         }else{
             let alerta = UIAlertController(title: "Aviso", message: "El campo azul no puede estar vacío para guardar el gasto", preferredStyle: .alert)
             alerta.addAction(UIAlertAction(title:"OK", style: .default, handler: nil))
-            self.present(alerta, animated: true, completion: nil)
-        }
+            self.present(alerta, animated: true, completion: nil)        }
     }
 
 }

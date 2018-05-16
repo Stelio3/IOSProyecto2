@@ -703,7 +703,7 @@
             </objects>
             <point key="canvasLocation" x="-815.20000000000005" y="-1728.4857571214395"/>
         </scene>
-        <!--Principal-->
+        <!--Item-->
         <scene sceneID="ucN-y3-ePs">
             <objects>
                 <viewController id="YL9-hk-T8D" customClass="VCPrincipal" customModule="MiPrimerProyecto" customModuleProvider="target" sceneMemberID="viewController">
@@ -834,6 +834,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="adc-ei-Ib5"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="CKq-oJ-eLl"/>
                     <connections>
                         <outlet property="ProgressBar" destination="D5T-yA-qc0" id="i5V-nr-Ej7"/>
                         <outlet property="btnGasto" destination="crv-IN-LBl" id="kSO-Rp-nt5"/>
@@ -858,7 +859,7 @@
                                 <rect key="frame" x="0.0" y="36" width="375" height="618"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="micelda1" rowHeight="96" id="dPb-k3-ADT" customClass="TVCMiCelda" customModule="MiPrimerProyecto" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="micelda1" rowHeight="96" id="dPb-k3-ADT" customClass="TVCMiCelda" customModule="MiPrimerProyecto" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="96"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dPb-k3-ADT" id="TYe-Ds-jZc">

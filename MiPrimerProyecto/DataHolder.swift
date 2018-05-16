@@ -14,7 +14,6 @@ class DataHolder: NSObject {
     static let sharedInstance:DataHolder = DataHolder()
     
     var locationAdmin:LocationAdmin?
-    var sNick:String = "Yony"
     var FireStoreDB:Firestore?
     var firStorage:Storage?
     var fireStorageRef:StorageReference?
@@ -26,7 +25,7 @@ class DataHolder: NSObject {
     var pass:String?
     var GuardaIng:Double?
     var GuardaGas:Double?
-    //var firUser:User?
+    var firUser:User?
     
     
     func initFireBase(){
@@ -109,6 +108,20 @@ class DataHolder: NSObject {
         }
         
     }
+    func insertarIngreso(ing:Double, notaI:String, ingreso:Ingreso, delegate:DataHolderDelegate) {
+        GuardaIng = ing
+        if(GuardaIng != nil){
+            self.FireStoreDB?.collection("Perfiles").document("03wtY6Yy9rOwhQ5NqVZfSPqAOyn1").collection("ListaIngresos").document("%d").setData(ingreso.getDiccionary())
+            delegate.DHDInsertarIngreso!(blingreso: true)
+        }else{
+            delegate.DHDInsertarIngreso!(blingreso: false)
+            
+        }
+        
+        /*let rutaTemp = "/Perfiles/03wtY6Yy9rOwhQ5NqVZfSPqAOyn1/Estado/03wtY6Yy9rOwhQ5NqVZfSPqAOyn1/ListaIngresos/03wtY6Yy9rOwhQ5NqVZfSPqAOyn1"
+        let childUpdates = [rutaTemp:ingreso.getDiccionary()]*/
+    
+    }
     func setDownloadedImage(clave:String, imagenDes image:UIImage) {
         hmImagenesDescargadas![clave]=image
     }
@@ -169,6 +182,7 @@ class DataHolder: NSObject {
     func eventoClickLoginDH(email:String, pass:String, delegate: DataHolderDelegate){
         Auth.auth().signIn(withEmail: (email), password: (pass)) { (user, error) in
             if user != nil{
+                self.firUser = user
                 let ruta = self.FireStoreDB?.collection("Perfiles").document((user?.uid)!)
                 ruta?.getDocument { (document, error) in
                     if document != nil{
@@ -191,6 +205,7 @@ class DataHolder: NSObject {
         Auth.auth().createUser(withEmail: (emailR), password: (passR)) { (User, error) in
             if (User != nil) && (passR == repassR){
                 print("Te registraste")
+                self.firUser = User
                 self.FireStoreDB?.collection("Perfiles").document((User?.uid)!).setData(self.miPerfil.getMap())
                 delegate.DHDRegisterOk!(blRegister: true)
             }else{
@@ -222,9 +237,9 @@ class DataHolder: NSObject {
             }
         }
     }*/
-    /*func saveUser() {
+    func saveUser() {
         self.FireStoreDB?.collection("Perfiles").document((firUser?.uid)!).setData(DataHolder.sharedInstance.miPerfil.getMap())
-    }*/
+    }
 }
 
 extension UIViewController{
@@ -245,4 +260,6 @@ extension UIViewController{
     @objc optional func DHDRegisterOk(blRegister:Bool)
     @objc optional func DHDImagenDescargada(imagen:UIImage)
     @objc optional func DHDBorrar(blfin:Bool)
+    @objc optional func DHDInsertarIngreso(blingreso:Bool)
+    
 }

@@ -66,7 +66,7 @@ class VCGaleria: UIViewController, UIImagePickerControllerDelegate, UINavigation
                 let downloadURL = metadata.downloadURL()
                 print("Mi url: ",downloadURL)
                 DataHolder.sharedInstance.miPerfil.sImage = downloadURL?.absoluteString
-                //DataHolder.sharedInstance.saveUser()
+                DataHolder.sharedInstance.saveUser()
             }
         }
     }

@@ -111,7 +111,7 @@ class DataHolder: NSObject {
     func insertarIngreso(ing:Double, notaI:String, ingreso:Ingreso, delegate:DataHolderDelegate) {
         GuardaIng = ing
         if(GuardaIng != nil){
-            self.FireStoreDB?.collection("Perfiles").document("03wtY6Yy9rOwhQ5NqVZfSPqAOyn1").collection("ListaIngresos").document("%d").setData(ingreso.getDiccionary())
+            self.FireStoreDB?.collection("Perfiles").document((firUser?.uid)!).collection("ListaIngresos").document("2").setData(ingreso.getDiccionary())
             delegate.DHDInsertarIngreso!(blingreso: true)
         }else{
             delegate.DHDInsertarIngreso!(blingreso: false)

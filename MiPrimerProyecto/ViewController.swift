@@ -30,6 +30,7 @@ class ViewController: UIViewController, DataHolderDelegate {
         txtPass?.text = DataHolder.sharedInstance.pass
         Auth.auth().addStateDidChangeListener { (auth, user) in
             if user != nil{
+                DataHolder.sharedInstance.firUser = user
                 self.performSegue(withIdentifier: "trlogin", sender: self)
             }
         }

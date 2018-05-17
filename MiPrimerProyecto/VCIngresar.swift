@@ -38,6 +38,8 @@ class VCIngresar: UIViewController, DataHolderDelegate {
     }
     @IBAction func GuardarIngreso() {
         let ing = Ingreso()
+        ing.sIngreso = Double((txtCantIngreso?.text)!)!
+        ing.sNotaI = txtANotaIngreso?.text
         DataHolder.sharedInstance.insertarIngreso(ing: Double((txtCantIngreso?.text)!)!, notaI: (txtANotaIngreso?.text)!, ingreso: ing, delegate: self)
         
     }

@@ -18,6 +18,7 @@ class DataHolder: NSObject {
     var firStorage:Storage?
     var fireStorageRef:StorageReference?
     var miPerfil:Perfil = Perfil()
+    //var miIngreso:Ingreso = Ingreso()
     var arCiudades:[City] = []
     var arPerfiles:[Perfil] = []
     var hmImagenesDescargadas:[String:UIImage]?=[:]

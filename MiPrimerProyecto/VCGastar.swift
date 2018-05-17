@@ -25,14 +25,22 @@ class VCGastar: UIViewController, DataHolderDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    @IBAction func GuardarGasto(){
-        DataHolder.sharedInstance.GuardaGas = Double((txtCantGasto?.text)!)
-        if(DataHolder.sharedInstance.GuardaGas != nil){
-        self.performSegue(withIdentifier: "trgastar", sender: self)
+    func DHDInsertarGasto(blgasto: Bool) {
+        if blgasto{
+            self.performSegue(withIdentifier: "trgastar", sender: self)
         }else{
             let alerta = UIAlertController(title: "Aviso", message: "El campo azul no puede estar vacío para guardar el gasto", preferredStyle: .alert)
             alerta.addAction(UIAlertAction(title:"OK", style: .default, handler: nil))
-            self.present(alerta, animated: true, completion: nil)        }
+            self.present(alerta, animated: true, completion: nil)
+            
+        }
+    }
+    @IBAction func GuardarGasto() {
+        let gas = Gasto()
+        gas.sGasto = Double((txtCantGasto?.text)!)!
+        gas.sNotaG = txtANotaGasto?.text
+        DataHolder.sharedInstance.insertarGasto(gas: Double((txtCantGasto?.text)!)!, notaG: (txtANotaGasto?.text)!, gasto: gas, delegate: self)
+        
     }
 
 }

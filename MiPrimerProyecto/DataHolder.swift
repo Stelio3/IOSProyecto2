@@ -123,6 +123,16 @@ class DataHolder: NSObject {
         let childUpdates = [rutaTemp:ingreso.getDiccionary()]*/
     
     }
+    func insertarGasto(gas:Double, notaG:String, gasto:Gasto, delegate:DataHolderDelegate) {
+        GuardaGas = gas
+        if(GuardaGas != nil){
+            self.FireStoreDB?.collection("Perfiles").document((firUser?.uid)!).collection("ListaGastos").document("2").setData(gasto.getDiccionary())
+            delegate.DHDInsertarGasto!(blgasto: true)
+        }else{
+            delegate.DHDInsertarGasto!(blgasto: false)
+            
+        }
+    }
     func setDownloadedImage(clave:String, imagenDes image:UIImage) {
         hmImagenesDescargadas![clave]=image
     }
@@ -262,5 +272,6 @@ extension UIViewController{
     @objc optional func DHDImagenDescargada(imagen:UIImage)
     @objc optional func DHDBorrar(blfin:Bool)
     @objc optional func DHDInsertarIngreso(blingreso:Bool)
+    @objc optional func DHDInsertarGasto(blgasto:Bool)
     
 }

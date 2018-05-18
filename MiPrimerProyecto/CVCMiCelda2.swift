@@ -23,4 +23,6 @@ class CVCMiCelda2: UICollectionViewCell, DataHolderDelegate {
     func DHDImagenDescargada(imagen: UIImage) {
         self.imgvMain?.image = imagen
         
-    }}
+    }
+    
+}

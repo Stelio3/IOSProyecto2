@@ -13,17 +13,36 @@ class Perfil: NSObject {
     let IDNombre="nombre"
     let IDEmail="email"
     let IDImage="url_image"
+    let IDingreso="tIngresos"
+    let IDgastos="tGastos"
     
     var sID:String?
     var sNombre:String?
     var sEmail:String?
     var sImage:String?
-    //var iFecha:Int?
+    var dbGastos:Double = 0
+    var dbIngresos:Double = 0
+    
+    
+    var arGastos:[Gasto] = []
+    var arIngresos:[Ingreso] = []
+    
+    func agregarGasto(dbg:Double)  {
+        dbGastos = dbGastos + dbg
+        arGastos.append(Gasto())
+    }
+    
+    func agregarIngreso(dbi:Double)  {
+        dbIngresos = dbIngresos + dbi
+        arIngresos.append(Ingreso())
+    }
     
     func setMap(valores:[String:Any]) {
         sNombre = valores[IDNombre] as? String
         sEmail = valores[IDEmail] as? String
         sImage = valores[IDImage] as? String
+        dbIngresos = (valores[IDingreso] as? Double)!
+        dbGastos = (valores[IDgastos] as? Double)!
         
         if sImage == nil{
             sImage = "gs://miprimerproyecto-9f885.appspot.com/rafa.jpg"
@@ -34,7 +53,24 @@ class Perfil: NSObject {
         return[
             IDNombre: sNombre as Any,
             IDEmail:sEmail as Any,
-            IDImage:sImage as Any
+            IDImage:sImage as Any,
+            IDingreso:dbIngresos as Any,
+            IDgastos:dbGastos as Any
         ]
+    }
+    
+    func guardarEnFB(sRuta:String) {
+        DataHolder.sharedInstance.FireStoreDB?.collection(sRuta).document((sID)!).setData(getMap())
+        
+        let sRutaGastos:String = String(format: "Perfiles/%@/ListaGastos", sID!)
+        for gasto in arGastos{
+            gasto.guardarEnFB(sRuta: sRutaGastos)
+        }
+        let sRutaIngresos:String = String(format: "Perfiles/%@/ListaIngresos", sID!)
+        for ingreso in arIngresos{
+            ingreso.guardarEnFB(sRuta: sRutaIngresos)
+        }
+        
+        
     }
 }

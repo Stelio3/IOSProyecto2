@@ -9,6 +9,7 @@
 import UIKit
 
 class Gasto: NSObject {
+    var sID:String?
     var sGasto:Double?
     var sNotaG:String?
     
@@ -21,11 +22,15 @@ class Gasto: NSObject {
         sGasto=valores["Ngasto"] as? Double
         sNotaG=valores["notaGas"] as? String
     }
-    func getDiccionary() -> [String:AnyObject] {
+    func getMap() -> [String:AnyObject] {
         var hm:[String:AnyObject] = [:]
         hm["Ngasto"] = sGasto! as AnyObject
         hm["notaGas"] = sNotaG! as AnyObject
         return hm
+    }
+    
+    func guardarEnFB(sRuta:String) {
+        DataHolder.sharedInstance.FireStoreDB?.collection(sRuta).document((sID)!).setData(getMap())
     }
     
 }

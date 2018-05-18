@@ -18,7 +18,8 @@ class DataHolder: NSObject {
     var firStorage:Storage?
     var fireStorageRef:StorageReference?
     var miPerfil:Perfil = Perfil()
-    //var miIngreso:Ingreso = Ingreso()
+    var miIngreso:Ingreso = Ingreso()
+    var miGasto:Gasto = Gasto()
     var arCiudades:[City] = []
     var arPerfiles:[Perfil] = []
     var hmImagenesDescargadas:[String:UIImage]?=[:]
@@ -101,37 +102,23 @@ class DataHolder: NSObject {
                     delegate.DHDImagenDescargada!(imagen: image!)
                 }
             }
-            // }
         }
         else{
             delegate.DHDImagenDescargada!(imagen: (self.hmImagenesDescargadas?[clave])!)
-            
         }
-        
     }
-    func insertarIngreso(ing:Double, notaI:String, ingreso:Ingreso, delegate:DataHolderDelegate) {
-        GuardaIng = ing
-        if(GuardaIng != nil){
-            self.FireStoreDB?.collection("Perfiles").document((firUser?.uid)!).collection("ListaIngresos").document("2").setData(ingreso.getDiccionary())
-            delegate.DHDInsertarIngreso!(blingreso: true)
-        }else{
-            delegate.DHDInsertarIngreso!(blingreso: false)
-            
-        }
-        
-        /*let rutaTemp = "/Perfiles/03wtY6Yy9rOwhQ5NqVZfSPqAOyn1/Estado/03wtY6Yy9rOwhQ5NqVZfSPqAOyn1/ListaIngresos/03wtY6Yy9rOwhQ5NqVZfSPqAOyn1"
-        let childUpdates = [rutaTemp:ingreso.getDiccionary()]*/
-    
+    func insertarIngreso(ing:Double, notaI:String, delegate:DataHolderDelegate) {
+        miPerfil.agregarIngreso(dbi: miIngreso.sIngreso!)
+        saveUser()
+        //self.FireStoreDB?.collection("Perfiles").document((firUser?.uid)!).setData(miPerfil.agregarIngreso(dbi: miIngreso.sIngreso!))
+        //self.FireStoreDB?.collection("Perfiles").document((firUser?.uid)!).collection("ListaIngresos").document("1").setData(miIngreso.getDiccionary())
+        //delegate.DHDInsertarIngreso!()
     }
-    func insertarGasto(gas:Double, notaG:String, gasto:Gasto, delegate:DataHolderDelegate) {
-        GuardaGas = gas
-        if(GuardaGas != nil){
-            self.FireStoreDB?.collection("Perfiles").document((firUser?.uid)!).collection("ListaGastos").document("2").setData(gasto.getDiccionary())
-            delegate.DHDInsertarGasto!(blgasto: true)
-        }else{
-            delegate.DHDInsertarGasto!(blgasto: false)
-            
-        }
+    func insertarGasto(gas:Double, notaG:String, delegate:DataHolderDelegate) {
+        miPerfil.agregarGasto(dbg: miGasto.sGasto!)
+        saveUser()
+        //self.FireStoreDB?.collection("Perfiles").document((firUser?.uid)!).collection("ListaGastos").document("1").setData(miGasto.getMap())
+        //delegate.DHDInsertarGasto!()
     }
     func setDownloadedImage(clave:String, imagenDes image:UIImage) {
         hmImagenesDescargadas![clave]=image
@@ -143,27 +130,23 @@ class DataHolder: NSObject {
         return ""
     }
     func descargarCiudades(delegate:DataHolderDelegate){
-        FireStoreDB?.collection("cities")
-            .addSnapshotListener { (querySnapshot, err) in
-                if let err = err {
-                    print("Error getting documents: \(err)")
-                    delegate.DHDDescargaCiudadesCompleta!(blFinCiudades: false)
-                } else {
-                    self.arCiudades=[]
-                    for document in querySnapshot!.documents {
-                        let ciudad:City = City()
-                        ciudad.sID=document.documentID
-                        ciudad.setMap(valores: document.data())
-                        self.arCiudades.append(ciudad)
-                        
-                        print("\(document.documentID) => \(document.data())")
-                    }
-                    print(self.arCiudades.count)
-                    delegate.DHDDescargaCiudadesCompleta!(blFinCiudades: true)
-                    //self.refreshUI()
+        FireStoreDB?.collection("cities").addSnapshotListener { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+                delegate.DHDDescargaCiudadesCompleta!(blFinCiudades: false)
+            } else {
+                self.arCiudades=[]
+                for document in querySnapshot!.documents {
+                    let ciudad:City = City()
+                    ciudad.sID=document.documentID
+                    ciudad.setMap(valores: document.data())
+                    self.arCiudades.append(ciudad)
                     
-                    
+                    print("\(document.documentID) => \(document.data())")
                 }
+                print(self.arCiudades.count)
+                delegate.DHDDescargaCiudadesCompleta!(blFinCiudades: true)
+            }
         }
     }
     func descargarPerfiles(delegate: DataHolderDelegate){
@@ -194,24 +177,29 @@ class DataHolder: NSObject {
         Auth.auth().signIn(withEmail: (email), password: (pass)) { (user, error) in
             if user != nil{
                 self.firUser = user
-                let ruta = self.FireStoreDB?.collection("Perfiles").document((user?.uid)!)
-                ruta?.getDocument { (document, error) in
-                    if document != nil{
-                        self.miPerfil.setMap(valores: (document?.data())!)
-                        delegate.DHDLoginOk!(blLogin: true)
-                        
-                    }else{
-                        print(error!)
-                        delegate.DHDLoginOk!(blLogin: false)
-                    }
-                }
+                self.descargarPerfil()
+                delegate.DHDLoginOk!(blLogin: true)
             }
             else{
+                delegate.DHDLoginOk!(blLogin: false)
                 print("NO SE HA LOGUEADO!")
                 print(error!)
             }
         }
     }
+    
+    func descargarPerfil() {
+        let ruta = self.FireStoreDB?.collection("Perfiles").document((firUser?.uid)!)
+        ruta?.getDocument { (document, error) in
+            if document != nil{
+                self.miPerfil.setMap(valores: (document?.data())!)
+                
+            }else{
+                print(error!)
+            }
+        }
+    }
+    
     func clickRegistrarDH(emailR:String, passR:String, repassR:String, name:String, delegate: DataHolderDelegate){
         Auth.auth().createUser(withEmail: (emailR), password: (passR)) { (User, error) in
             if (User != nil) && (passR == repassR){
@@ -249,7 +237,8 @@ class DataHolder: NSObject {
         }
     }*/
     func saveUser() {
-        self.FireStoreDB?.collection("Perfiles").document((firUser?.uid)!).setData(DataHolder.sharedInstance.miPerfil.getMap())
+        //self.FireStoreDB?.collection("Perfiles").document((firUser?.uid)!).setData(DataHolder.sharedInstance.miPerfil.getMap())
+        miPerfil.guardarEnFB(sRuta: "Perfiles")
     }
 }
 
@@ -271,7 +260,7 @@ extension UIViewController{
     @objc optional func DHDRegisterOk(blRegister:Bool)
     @objc optional func DHDImagenDescargada(imagen:UIImage)
     @objc optional func DHDBorrar(blfin:Bool)
-    @objc optional func DHDInsertarIngreso(blingreso:Bool)
-    @objc optional func DHDInsertarGasto(blgasto:Bool)
+    @objc optional func DHDInsertarIngreso()
+    @objc optional func DHDInsertarGasto()
     
 }

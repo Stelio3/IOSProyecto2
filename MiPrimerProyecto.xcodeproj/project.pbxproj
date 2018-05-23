@@ -26,7 +26,6 @@
 		79DC502A208F4BDF00C70874 /* VCPrincipal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DC5029208F4BDF00C70874 /* VCPrincipal.swift */; };
 		79E054C020AC7D8D0051EC23 /* Ingreso.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E054BF20AC7D8D0051EC23 /* Ingreso.swift */; };
 		79E054C220AC7D9F0051EC23 /* Gasto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E054C120AC7D9F0051EC23 /* Gasto.swift */; };
-		79E054C420AC7F7E0051EC23 /* Estado.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E054C320AC7F7E0051EC23 /* Estado.swift */; };
 		79E203242063B7D6003B2EA3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E203232063B7D6003B2EA3 /* AppDelegate.swift */; };
 		79E203262063B7D6003B2EA3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E203252063B7D6003B2EA3 /* ViewController.swift */; };
 		79E203292063B7D6003B2EA3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79E203272063B7D6003B2EA3 /* Main.storyboard */; };
@@ -57,7 +56,6 @@
 		79DC5029208F4BDF00C70874 /* VCPrincipal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCPrincipal.swift; sourceTree = "<group>"; };
 		79E054BF20AC7D8D0051EC23 /* Ingreso.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingreso.swift; sourceTree = "<group>"; };
 		79E054C120AC7D9F0051EC23 /* Gasto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gasto.swift; sourceTree = "<group>"; };
-		79E054C320AC7F7E0051EC23 /* Estado.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Estado.swift; sourceTree = "<group>"; };
 		79E203202063B7D6003B2EA3 /* MiPrimerProyecto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiPrimerProyecto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		79E203232063B7D6003B2EA3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		79E203252063B7D6003B2EA3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -119,7 +117,6 @@
 				32838261207FC30000731DF4 /* VCMapa.swift */,
 				3296946C2083555600C5BC25 /* City.swift */,
 				798B76E6207F871E003F39D3 /* Perfil.swift */,
-				79E054C320AC7F7E0051EC23 /* Estado.swift */,
 				79E054BF20AC7D8D0051EC23 /* Ingreso.swift */,
 				79E054C120AC7D9F0051EC23 /* Gasto.swift */,
 				320486CD20A8AD6E00B9FD9F /* VCGaleria.swift */,
@@ -296,7 +293,6 @@
 			files = (
 				79E2032C2063B7D6003B2EA3 /* MiPrimerProyecto.xcdatamodeld in Sources */,
 				79504F91207CE19700EF65C7 /* DataHolder.swift in Sources */,
-				79E054C420AC7F7E0051EC23 /* Estado.swift in Sources */,
 				7974A9EC2076969400926546 /* CVCMiCelda2.swift in Sources */,
 				79DC502A208F4BDF00C70874 /* VCPrincipal.swift in Sources */,
 				79E054C020AC7D8D0051EC23 /* Ingreso.swift in Sources */,

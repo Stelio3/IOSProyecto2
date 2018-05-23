@@ -119,6 +119,7 @@ class DataHolder: NSObject {
         saveUser()
         //self.FireStoreDB?.collection("Perfiles").document((firUser?.uid)!).collection("ListaGastos").document("1").setData(miGasto.getMap())
         //delegate.DHDInsertarGasto!()
+        
     }
     func setDownloadedImage(clave:String, imagenDes image:UIImage) {
         hmImagenesDescargadas![clave]=image
@@ -177,8 +178,8 @@ class DataHolder: NSObject {
         Auth.auth().signIn(withEmail: (email), password: (pass)) { (user, error) in
             if user != nil{
                 self.firUser = user
-                self.descargarPerfil()
-                delegate.DHDLoginOk!(blLogin: true)
+                self.descargarPerfil(delegate: delegate)
+                
             }
             else{
                 delegate.DHDLoginOk!(blLogin: false)
@@ -188,12 +189,12 @@ class DataHolder: NSObject {
         }
     }
     
-    func descargarPerfil() {
+    func descargarPerfil(delegate: DataHolderDelegate) {
         let ruta = self.FireStoreDB?.collection("Perfiles").document((firUser?.uid)!)
         ruta?.getDocument { (document, error) in
             if document != nil{
                 self.miPerfil.setMap(valores: (document?.data())!)
-                
+                delegate.DHDLoginOk!(blLogin: true)
             }else{
                 print(error!)
             }
@@ -260,7 +261,5 @@ extension UIViewController{
     @objc optional func DHDRegisterOk(blRegister:Bool)
     @objc optional func DHDImagenDescargada(imagen:UIImage)
     @objc optional func DHDBorrar(blfin:Bool)
-    @objc optional func DHDInsertarIngreso()
-    @objc optional func DHDInsertarGasto()
     
 }

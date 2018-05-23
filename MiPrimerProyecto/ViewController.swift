@@ -31,7 +31,7 @@ class ViewController: UIViewController, DataHolderDelegate {
         Auth.auth().addStateDidChangeListener { (auth, user) in
             if user != nil{
                 DataHolder.sharedInstance.firUser = user
-                DataHolder.sharedInstance.descargarPerfil()
+                DataHolder.sharedInstance.descargarPerfil(delegate: self)
                 self.performSegue(withIdentifier: "trlogin", sender: self)
             }
         }

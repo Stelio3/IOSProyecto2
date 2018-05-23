@@ -26,14 +26,12 @@ class VCIngresar: UIViewController, DataHolderDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    func DHDInsertarIngreso() {
-            self.performSegue(withIdentifier: "tringresar", sender: self)
-    }
     @IBAction func GuardarIngreso() {
         if (!(txtCantIngreso?.text?.isEmpty)!){
             DataHolder.sharedInstance.miIngreso.sIngreso = Double((txtCantIngreso?.text)!)!
             DataHolder.sharedInstance.miIngreso.sNotaI = txtANotaIngreso?.text
             DataHolder.sharedInstance.insertarIngreso(ing: Double((txtCantIngreso?.text)!)!, notaI: (txtANotaIngreso?.text)!, delegate: self)
+            self.performSegue(withIdentifier: "tringresar", sender: self)
         }
         else{
             let alerta = UIAlertController(title: "Aviso", message: "El campo azul no puede estar vacío para guardar el ingreso", preferredStyle: .alert)

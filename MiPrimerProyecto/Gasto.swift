@@ -30,6 +30,7 @@ class Gasto: NSObject {
     }
     
     func guardarEnFB(sRuta:String) {
+        sID = DataHolder.sharedInstance.firUser?.uid
         DataHolder.sharedInstance.FireStoreDB?.collection(sRuta).document((sID)!).setData(getMap())
     }
     

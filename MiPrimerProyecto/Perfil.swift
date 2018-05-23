@@ -44,6 +44,13 @@ class Perfil: NSObject {
         dbIngresos = (valores[IDingreso] as? Double)!
         dbGastos = (valores[IDgastos] as? Double)!
         
+        /*for gastos in valores["ListaGastos"]as Any{
+            self.agregarGasto(dbg: DataHolder.sharedInstance.miGasto.sGasto!)
+        }
+        for ingresos in arIngresos{
+            self.agregarIngreso(dbi: DataHolder.sharedInstance.miIngreso.sIngreso!)
+        }*/
+        
         if sImage == nil{
             sImage = "gs://miprimerproyecto-9f885.appspot.com/rafa.jpg"
         }
@@ -60,6 +67,7 @@ class Perfil: NSObject {
     }
     
     func guardarEnFB(sRuta:String) {
+        sID = DataHolder.sharedInstance.firUser?.uid
         DataHolder.sharedInstance.FireStoreDB?.collection(sRuta).document((sID)!).setData(getMap())
         
         let sRutaGastos:String = String(format: "Perfiles/%@/ListaGastos", sID!)

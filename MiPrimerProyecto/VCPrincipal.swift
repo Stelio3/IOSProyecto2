@@ -22,16 +22,10 @@ class VCPrincipal: UIViewController {
         btnIngreso?.layer.cornerRadius = 15
         btnGasto?.layer.cornerRadius = 15
         btnMenu?.layer.cornerRadius = 15
+
+        print(" ------------ ",DataHolder.sharedInstance.miPerfil.dbIngresos)
         
-        if DataHolder.sharedInstance.GuardaIng != nil && DataHolder.sharedInstance.GuardaGas == nil{
-            DataHolder.sharedInstance.GuardaGas = 0
-        }
-        else if DataHolder.sharedInstance.GuardaIng == nil && DataHolder.sharedInstance.GuardaGas != nil{
-            DataHolder.sharedInstance.GuardaIng = 0
-        }
-        else if DataHolder.sharedInstance.GuardaIng != nil && DataHolder.sharedInstance.GuardaGas != nil{
-        ProgressBar?.progress = CGFloat(DataHolder.sharedInstance.GuardaIng! / (DataHolder.sharedInstance.GuardaIng! + DataHolder.sharedInstance.GuardaGas!))
-        }
+        //ProgressBar?.progress = CGFloat(DataHolder.sharedInstance.miPerfil.dbIngresos / (DataHolder.sharedInstance.miPerfil.dbIngresos + DataHolder.sharedInstance.miPerfil.dbGastos))
     }
 
     override func didReceiveMemoryWarning() {

@@ -14,12 +14,7 @@ class Ingreso: NSObject {
     var sNotaI:String?
     var sID:String?
     
-    override init() {
-        super.init()
-        sIngreso=0
-        sNotaI=""
-    }
-    init(valores:[String:AnyObject]){
+    func setMap(valores:[String:Any]) {
         sIngreso=valores["Ningreso"] as? Double
         sNotaI=valores["notaIng"] as? String
     }

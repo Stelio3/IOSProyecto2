@@ -45,11 +45,10 @@ class Perfil: NSObject {
         dbGastos = (valores[IDgastos] as? Double)!
         
         /*for gastos in valores["ListaGastos"]as Any{
-            self.agregarGasto(dbg: DataHolder.sharedInstance.miGasto.sGasto!)
-        }
-        for ingresos in arIngresos{
-            self.agregarIngreso(dbi: DataHolder.sharedInstance.miIngreso.sIngreso!)
+            
         }*/
+        for ingresos in arIngresos{
+        }
         
         if sImage == nil{
             sImage = "gs://miprimerproyecto-9f885.appspot.com/rafa.jpg"

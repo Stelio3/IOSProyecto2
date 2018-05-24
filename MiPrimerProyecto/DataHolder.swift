@@ -170,6 +170,7 @@ class DataHolder: NSObject {
                     delegate.DHDDescargaPerfilesCompleta!(blFinPerfiles: true)
                 }
                 // Do any additional setup after loading the view.
+                
         }
         
     }

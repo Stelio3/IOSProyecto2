@@ -10,7 +10,7 @@ import UIKit
 import GTProgressBar
 import FirebaseAuth
 
-class VCPrincipal: UIViewController {
+class VCPrincipal: UIViewController{
     
     @IBOutlet var ProgressBar:GTProgressBar?
     @IBOutlet var btnIngreso:UIButton?
@@ -22,10 +22,11 @@ class VCPrincipal: UIViewController {
         btnIngreso?.layer.cornerRadius = 15
         btnGasto?.layer.cornerRadius = 15
         btnMenu?.layer.cornerRadius = 15
-
+        
         print(" ------------ ",DataHolder.sharedInstance.miPerfil.dbIngresos)
+        print(" ------------ ",DataHolder.sharedInstance.miPerfil.dbGastos)
         if(DataHolder.sharedInstance.miPerfil.dbIngresos != 0 || DataHolder.sharedInstance.miPerfil.dbGastos != 0){
-        ProgressBar?.progress = CGFloat(DataHolder.sharedInstance.miPerfil.dbIngresos / (DataHolder.sharedInstance.miPerfil.dbIngresos + DataHolder.sharedInstance.miPerfil.dbGastos))
+            ProgressBar?.progress = CGFloat(DataHolder.sharedInstance.miPerfil.dbIngresos / (DataHolder.sharedInstance.miPerfil.dbIngresos + DataHolder.sharedInstance.miPerfil.dbGastos))
         }
     }
 

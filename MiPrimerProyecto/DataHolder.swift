@@ -167,7 +167,6 @@ class DataHolder: NSObject {
                         print("\(document.documentID) => \(document.data())")
                     }
                     print(self.arPerfiles.count)
-                    //self.refreshUI()
                     delegate.DHDDescargaPerfilesCompleta!(blFinPerfiles: true)
                 }
                 // Do any additional setup after loading the view.

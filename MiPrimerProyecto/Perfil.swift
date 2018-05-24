@@ -20,8 +20,8 @@ class Perfil: NSObject {
     var sNombre:String?
     var sEmail:String?
     var sImage:String?
-    var dbGastos:Double = 0
-    var dbIngresos:Double = 0
+    var dbGastos:Double = 0.0
+    var dbIngresos:Double = 0.0
     
     
     var arGastos:[Gasto] = []

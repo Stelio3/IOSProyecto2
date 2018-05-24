@@ -37,7 +37,6 @@ class VCColeccion: UIViewController, UICollectionViewDelegate, UICollectionViewD
         cell.lblApellido?.text = DataHolder.sharedInstance.arPerfiles[indexPath.row].sEmail
         cell.mostrarImagen(uri: DataHolder.sharedInstance.arPerfiles[indexPath.row].sImage!)
 
-
         /*if indexPath.row == 0
         {
             cell.lblNombre?.text="Jaime"

@@ -9,6 +9,7 @@
 import UIKit
 
 class Gasto: NSObject {
+    
     var sID:String?
     var sGasto:Double?
     var sNotaG:String?

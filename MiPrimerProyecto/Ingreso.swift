@@ -14,7 +14,6 @@ class Ingreso: NSObject {
     var sNotaI:String?
     var sID:String?
     
-    
     override init() {
         super.init()
         sIngreso=0
@@ -32,7 +31,7 @@ class Ingreso: NSObject {
     }
     
     func guardarEnFB(sRuta:String) {
-        sID = DataHolder.sharedInstance.firUser?.uid
+        sID = "2"
         DataHolder.sharedInstance.FireStoreDB?.collection(sRuta).document((sID)!).setData(getMap())
     }
 }

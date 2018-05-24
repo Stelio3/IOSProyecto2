@@ -24,8 +24,9 @@ class VCPrincipal: UIViewController {
         btnMenu?.layer.cornerRadius = 15
 
         print(" ------------ ",DataHolder.sharedInstance.miPerfil.dbIngresos)
-        
-        //ProgressBar?.progress = CGFloat(DataHolder.sharedInstance.miPerfil.dbIngresos / (DataHolder.sharedInstance.miPerfil.dbIngresos + DataHolder.sharedInstance.miPerfil.dbGastos))
+        if(DataHolder.sharedInstance.miPerfil.dbIngresos != 0 || DataHolder.sharedInstance.miPerfil.dbGastos != 0){
+        ProgressBar?.progress = CGFloat(DataHolder.sharedInstance.miPerfil.dbIngresos / (DataHolder.sharedInstance.miPerfil.dbIngresos + DataHolder.sharedInstance.miPerfil.dbGastos))
+        }
     }
 
     override func didReceiveMemoryWarning() {

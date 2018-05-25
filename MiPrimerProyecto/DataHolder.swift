@@ -28,7 +28,7 @@ class DataHolder: NSObject {
     var GuardaIng:Double?
     var GuardaGas:Double?
     var firUser:User?
-    
+    var credential: AuthCredential?
     
     func initFireBase(){
         FirebaseApp.configure()
@@ -178,6 +178,7 @@ class DataHolder: NSObject {
         Auth.auth().signIn(withEmail: (email), password: (pass)) { (user, error) in
             if user != nil{
                 self.firUser = user
+                self.credential = EmailAuthProvider.credential(withEmail: email, password: pass)
                 self.descargarPerfil(delegate: delegate)
                 
             }
@@ -206,6 +207,7 @@ class DataHolder: NSObject {
             if (User != nil) && (passR == repassR){
                 print("Te registraste")
                 self.firUser = User
+                self.credential = EmailAuthProvider.credential(withEmail: emailR, password: passR)
                 self.FireStoreDB?.collection("Perfiles").document((User?.uid)!).setData(self.miPerfil.getMap())
                 delegate.DHDRegisterOk!(blRegister: true)
             }else{
@@ -215,28 +217,42 @@ class DataHolder: NSObject {
         }
         print("HOLA!!" )
     }
-    /*func borrarCuenta(delegate:DataHolderDelegate){
+    func borrarCuenta(delegate:DataHolderDelegate){
+        
         let user = self.firUser
         
-        user?.delete { error in
+        user?.reauthenticate(with: credential!) { error in
             if let error = error {
                 // An error happened.
+                print("Error de reautentificacion",error)
             } else {
-                // Account deleted.
-                self.FireStoreDB?.collection("Perfiles").document((user?.uid)!).delete() { err in
-                    if let err = err {
-                        print("Error removing document: \(err)")
+                // User re-authenticated.
+                print("Reautentificado")
+                user?.delete { error in
+                    if let error = error {
+                        print("Error borrando usuario",error)
+                        // An error happened.
                     } else {
-                        print("Document successfully removed!")
-                        delegate.DHDBorrar!(blfin: true)
-                        //self.performSegue(withIdentifier: "borrarcuenta", sender: self)
+                        // Account deleted.
+                        self.FireStoreDB?.collection("Perfiles").document((user?.uid)!).delete() { err in
+                            if let err = err {
+                                print("Error borrado documentos \(err)")
+                            } else {
+                                print("Documentos de "+(user?.uid)!+" borrados")
+                                delegate.DHDBorrar!(blfin: true)
+                                //self.performSegue(withIdentifier: "borrarcuenta", sender: self)
+                            }
+                        }
+                        print("Cuenta borrada")
+                        
                     }
                 }
-                print("cuenta borrada")
-                
             }
         }
-    }*/
+        
+        
+    }
+
     func saveUser() {
         //self.FireStoreDB?.collection("Perfiles").document((firUser?.uid)!).setData(DataHolder.sharedInstance.miPerfil.getMap())
         miPerfil.guardarEnFB(sRuta: "Perfiles")

@@ -38,6 +38,7 @@ class Perfil: NSObject {
     }
     
     func setMap(valores:[String:Any]) {
+        print(getMap())
         sNombre = valores[IDNombre] as? String
         sEmail = valores[IDEmail] as? String
         sImage = valores[IDImage] as? String

@@ -32,7 +32,7 @@ class ViewController: UIViewController, DataHolderDelegate {
             if user != nil{
                 DataHolder.sharedInstance.firUser = user
                 DataHolder.sharedInstance.descargarPerfil(delegate: self)
-                self.performSegue(withIdentifier: "trlogin", sender: self)
+                //self.performSegue(withIdentifier: "trlogin", sender: self)
             }
         }
     }
@@ -56,6 +56,12 @@ class ViewController: UIViewController, DataHolderDelegate {
     }
     @IBAction func eventoClickLogin(delegate: DataHolderDelegate){
        loguearse()
+    }
+    
+    func DHDDescargaPerfilesCompleta(blFinPerfiles: Bool) {
+        if blFinPerfiles {
+        self.performSegue(withIdentifier: "trlogin", sender: self)
+        }
     }
 
 }

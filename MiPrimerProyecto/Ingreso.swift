@@ -27,6 +27,7 @@ class Ingreso: NSObject {
         var hm:[String:AnyObject] = [:]
         hm["Ningreso"] = sIngreso! as AnyObject
         hm["notaIng"] = sNotaI! as AnyObject
+        print(hm)
         return hm
     }
     

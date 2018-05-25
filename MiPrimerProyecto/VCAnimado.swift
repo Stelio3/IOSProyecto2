@@ -10,6 +10,7 @@ import UIKit
 
 class VCAnimado: UIViewController {
 
+    @IBOutlet var VistaMenu:UIView?
     override func viewDidLoad() {
         super.viewDidLoad()
 

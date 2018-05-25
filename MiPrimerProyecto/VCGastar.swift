@@ -27,9 +27,8 @@ class VCGastar: UIViewController, DataHolderDelegate {
     }
     @IBAction func GuardarGasto() {
         if (!(txtCantGasto?.text?.isEmpty)!) {
-            DataHolder.sharedInstance.miGasto.sGasto = Double((txtCantGasto?.text)!)!
-            DataHolder.sharedInstance.miGasto.sNotaG = txtANotaGasto?.text
-            DataHolder.sharedInstance.insertarGasto(gas: Double((txtCantGasto?.text)!)!, notaG: (txtANotaGasto?.text)!, delegate: self)
+            DataHolder.sharedInstance.miPerfil.agregarGasto(dbg: Double((txtCantGasto?.text)!)!, nota: (txtANotaGasto?.text)!)
+            DataHolder.sharedInstance.saveUser()
             self.performSegue(withIdentifier: "trgastar", sender: self)
         }
         else{

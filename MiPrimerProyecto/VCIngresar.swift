@@ -28,9 +28,11 @@ class VCIngresar: UIViewController, DataHolderDelegate {
     }
     @IBAction func GuardarIngreso() {
         if (!(txtCantIngreso?.text?.isEmpty)!){
-            DataHolder.sharedInstance.miIngreso.sIngreso = Double((txtCantIngreso?.text)!)!
+            /*DataHolder.sharedInstance.miIngreso.sIngreso = Double((txtCantIngreso?.text)!)!
             DataHolder.sharedInstance.miIngreso.sNotaI = txtANotaIngreso?.text
-            DataHolder.sharedInstance.insertarIngreso(ing: Double((txtCantIngreso?.text)!)!, notaI: (txtANotaIngreso?.text)!, delegate: self)
+            DataHolder.sharedInstance.insertarIngreso(ing: Double((txtCantIngreso?.text)!)!, notaI: (txtANotaIngreso?.text)!, delegate: self)*/
+            DataHolder.sharedInstance.miPerfil.agregarIngreso(dbi: Double((txtCantIngreso?.text)!)!, nota: (txtANotaIngreso?.text)!)
+            DataHolder.sharedInstance.saveUser()
             self.performSegue(withIdentifier: "tringresar", sender: self)
         }
         else{

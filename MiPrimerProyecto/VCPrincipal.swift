@@ -52,13 +52,16 @@ class VCPrincipal: UIViewController, DataHolderDelegate{
     }
     
     @IBAction func AbrirMenu(){
-        UIView.animate(withDuration: 1.5, delay: 0.2, options:  UIViewAnimationOptions.curveEaseIn, animations:{ () -> Void in
+        UIView.animate(withDuration: 0.8, delay: 0.1, options:  UIViewAnimationOptions.curveEaseIn, animations:{ () -> Void in
             
             self.VistaMenu?.frame = self.frmMenuAppear!
         }, completion: {(finished)-> Void in})
     }
     @IBAction func CerrarMenu(){
-        
+        UIView.animate(withDuration: 0.8, delay: 0.1, options:  UIViewAnimationOptions.curveEaseIn, animations:{ () -> Void in
+            
+            self.VistaMenu?.frame = self.frmMenuCerrar!
+        }, completion: {(finished)-> Void in})
     }
     func DHDBorrar(blfin: Bool) {
         if blfin{

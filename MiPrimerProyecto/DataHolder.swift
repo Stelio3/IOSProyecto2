@@ -107,8 +107,8 @@ class DataHolder: NSObject {
             delegate.DHDImagenDescargada!(imagen: (self.hmImagenesDescargadas?[clave])!)
         }
     }
-    func insertarIngreso(ing:Double, notaI:String, delegate:DataHolderDelegate) {
-        miPerfil.agregarIngreso(dbi: miIngreso.sIngreso!)
+    /*func insertarIngreso(ing:Double, notaI:String, delegate:DataHolderDelegate) {
+        miPerfil.agregarIngreso(dbi: miIngreso.sIngreso!, nota: notaI)
         saveUser()
         //self.FireStoreDB?.collection("Perfiles").document((firUser?.uid)!).setData(miPerfil.agregarIngreso(dbi: miIngreso.sIngreso!))
         //self.FireStoreDB?.collection("Perfiles").document((firUser?.uid)!).collection("ListaIngresos").document("1").setData(miIngreso.getDiccionary())
@@ -120,7 +120,7 @@ class DataHolder: NSObject {
         //self.FireStoreDB?.collection("Perfiles").document((firUser?.uid)!).collection("ListaGastos").document("1").setData(miGasto.getMap())
         //delegate.DHDInsertarGasto!()
         
-    }
+    }*/
     func setDownloadedImage(clave:String, imagenDes image:UIImage) {
         hmImagenesDescargadas![clave]=image
     }

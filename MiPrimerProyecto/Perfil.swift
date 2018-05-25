@@ -27,14 +27,20 @@ class Perfil: NSObject {
     var arGastos:[Gasto] = []
     var arIngresos:[Ingreso] = []
     
-    func agregarGasto(dbg:Double)  {
+    func agregarGasto(dbg:Double, nota:String)  {
         dbGastos = dbGastos + dbg
-        arGastos.append(Gasto())
+        let gas = Gasto()
+        gas.sGasto = dbg
+        gas.sNotaG = nota
+        arGastos.append(gas)
     }
     
-    func agregarIngreso(dbi:Double)  {
+    func agregarIngreso(dbi:Double,nota:String)  {
         dbIngresos = dbIngresos + dbi
-        arIngresos.append(Ingreso())
+        let ing = Ingreso()
+        ing.sIngreso = dbi
+        ing.sNotaI = nota
+        arIngresos.append(ing)
     }
     
     func setMap(valores:[String:Any]) {
@@ -44,10 +50,41 @@ class Perfil: NSObject {
         dbIngresos = (valores[IDingreso] as? Double)!
         dbGastos = (valores[IDgastos] as? Double)!
         
-        /*for gastos in valores["ListaGastos"]as Any{
-            
-        }*/
-        for ingresos in arIngresos{
+        sID = DataHolder.sharedInstance.firUser?.uid
+        let sRutaGastos:String = String(format: "Perfiles/%@/ListaGastos", sID!)
+        
+        DataHolder.sharedInstance.FireStoreDB?.collection(sRutaGastos).addSnapshotListener { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+               
+            } else {
+                self.arGastos=[]
+                for document in querySnapshot!.documents {
+                    let gasto:Gasto = Gasto(valores: document.data() as [String : AnyObject])
+                    gasto.sID=document.documentID
+                    self.arGastos.append(gasto)
+                    print("\(document.documentID) => \(document.data())")
+                }
+                print("array gastos ---", self.arGastos.count)
+            }
+        }
+        
+        let sRutaIngresos:String = String(format: "Perfiles/%@/ListaIngresos", sID!)
+        
+        DataHolder.sharedInstance.FireStoreDB?.collection(sRutaIngresos).addSnapshotListener { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+                
+            } else {
+                self.arIngresos=[]
+                for document in querySnapshot!.documents {
+                    let ingreso:Ingreso = Ingreso(valores: document.data() as [String : AnyObject])
+                    ingreso.sID=document.documentID
+                    self.arIngresos.append(ingreso)
+                    print("\(document.documentID) => \(document.data())")
+                }
+                print("array ingresos --- ",self.arIngresos.count)
+            }
         }
         
         if sImage == nil{
@@ -77,7 +114,7 @@ class Perfil: NSObject {
         for ingreso in arIngresos{
             ingreso.guardarEnFB(sRuta: sRutaIngresos)
         }
-        
-        
     }
+    
+    
 }

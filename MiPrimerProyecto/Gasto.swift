@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Gasto: NSObject {
+class Gasto: NotaDinero {
     
     var sID:String?
     var sGasto:Double?
@@ -16,6 +16,7 @@ class Gasto: NSObject {
     
     override init() {
         super.init()
+        iTipo = 0
         sGasto=0
         sNotaG=""
     }

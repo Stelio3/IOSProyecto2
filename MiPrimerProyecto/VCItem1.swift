@@ -12,23 +12,29 @@ class VCItem1: UIViewController, UITableViewDelegate, UITableViewDataSource, Dat
 
     @IBOutlet var tabla:UITableView?
    // var arCiudades:[City] = []
+    var arIGFiltrado:[NotaDinero] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         DataHolder.sharedInstance.descargarCiudades(delegate: self)
-        /*if(blRes){
-            print("descargado")
-            self.refreshUI()
-            
-        }else{
-            print("no descargados")
-        }*/
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func filtrar(tipoFiltro:Int) {
+        arIGFiltrado = []
+        if(tipoFiltro == 0){
+             arIGFiltrado.append(contentsOf: DataHolder.sharedInstance.miPerfil.arGastos)
+            arIGFiltrado.append(contentsOf: DataHolder.sharedInstance.miPerfil.arIngresos)
+        }else if (tipoFiltro == 1){
+            arIGFiltrado.append(contentsOf: DataHolder.sharedInstance.miPerfil.arGastos)
+        }else if (tipoFiltro == 2){
+            arIGFiltrado.append(contentsOf: DataHolder.sharedInstance.miPerfil.arIngresos)
+        }
+        self.refreshUI()
     }
     
     func DHDDescargaCiudadesCompleta(blFinCiudades: Bool) {
@@ -38,44 +44,24 @@ class VCItem1: UIViewController, UITableViewDelegate, UITableViewDataSource, Dat
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return DataHolder.sharedInstance.arCiudades.count
+        return arIGFiltrado.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell:TVCMiCelda = tableView.dequeueReusableCell(withIdentifier: "micelda1") as! TVCMiCelda
-        cell.lblNombre?.text = DataHolder.sharedInstance.arCiudades[indexPath.row].sName
-        cell.lblPais?.text = DataHolder.sharedInstance.arCiudades[indexPath.row].sCountry
-        cell.mostrarImagen(uri: DataHolder.sharedInstance.arCiudades[indexPath.row].sUrlImage!)
-        
-        /*if indexPath.row == 0
-        {
-            cell.lblNombre?.text="Jaime"
-            cell.lblImagen?.image=UIImage(named: "descarga.jpeg")
-        }
-        else if (indexPath.row == 1)
-        {
-            cell.lblNombre?.text="Yony"
-            cell.lblImagen?.image=UIImage(named: "descarga.jpeg")
-        }
-        else if (indexPath.row == 2)
-        {
-            cell.lblNombre?.text="Pedro"
-            cell.lblImagen?.image=UIImage(named: "descarga.jpeg")
+        var celda:UITableViewCell?
+
+        if arIGFiltrado[indexPath.row].iTipo == 0{
+            let gastos:TVCMiCelda = tableView.dequeueReusableCell(withIdentifier: "micelda2") as! TVCMiCelda
+            var gastoTemp:Gasto = arIGFiltrado[indexPath.row] as! Gasto
+            celda = gastos
             
         }
-        else if (indexPath.row == 3)
-        {
-            cell.lblNombre?.text="Pablo"
-            cell.lblImagen?.image=UIImage(named: "descarga.jpeg")
-            
+        else if arIGFiltrado[indexPath.row].iTipo == 1{
+            let ingresos:TVCMiCelda = tableView.dequeueReusableCell(withIdentifier: "micelda1") as! TVCMiCelda
+            var ingresoTemp:Ingreso = arIGFiltrado[indexPath.row] as! Ingreso
+            celda = ingresos
         }
-        else if (indexPath.row == 4)
-        {
-            cell.lblNombre?.text="Javier"
-            cell.lblImagen?.image=UIImage(named: "descarga.jpeg")
-        }
- */
-        return cell
+        return celda!
     }
     
     func refreshUI() {

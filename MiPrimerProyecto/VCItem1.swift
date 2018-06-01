@@ -11,8 +11,12 @@ import UIKit
 class VCItem1: UIViewController, UITableViewDelegate, UITableViewDataSource, DataHolderDelegate {
 
     @IBOutlet var tabla:UITableView?
+    @IBOutlet var btnMingresos:UIButton?
+    @IBOutlet var btnMgastos:UIButton?
    // var arCiudades:[City] = []
     var arIGFiltrado:[NotaDinero] = []
+    
+    var iFiltroActual:Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +40,7 @@ class VCItem1: UIViewController, UITableViewDelegate, UITableViewDataSource, Dat
             arIGFiltrado.append(contentsOf: DataHolder.sharedInstance.miPerfil.arIngresos)
         }
         self.refreshUI()
+        iFiltroActual = tipoFiltro
     }
     
     /*func DHDDescargaCiudadesCompleta(blFinCiudades: Bool) {
@@ -70,6 +75,48 @@ class VCItem1: UIViewController, UITableViewDelegate, UITableViewDataSource, Dat
             
         }
         return celda!
+    }
+    
+    @IBAction func MostrarIngresos(){
+        if (btnMingresos?.isSelected)! {//SI SE ESTA MOSTRANDO INGRESOS
+            if iFiltroActual == 2 {//SE ESTAN MOSTRANDO SOLO LOS INGRESOS
+                self.filtrar(tipoFiltro: -1)
+            }
+            else if iFiltroActual == 0 {//SE ESTAN MOSTRANDO TODOS
+                self.filtrar(tipoFiltro: 1)
+            }
+            btnMingresos?.isSelected = false
+        }
+        else{//SI NO SE ESTA MOSTRANDO INGRESOS
+            if iFiltroActual == -1 {//NO SE ESTA MOSTRANDO NADA
+                self.filtrar(tipoFiltro: 2)
+            }
+            else if iFiltroActual == 1 {//SE ESTAN MOSTRANDO SOLO LOS GASTOS
+                self.filtrar(tipoFiltro: 0)
+            }
+            btnMingresos?.isSelected = true
+        }
+        
+    }
+    @IBAction func MostrarGastos(){
+        if (btnMgastos?.isSelected)! {//SI SE ESTA MOSTRANDO GASTOS
+            if iFiltroActual == 1 {//SE ESTAN MOSTRANDO SOLO LOS GASTOS
+                self.filtrar(tipoFiltro: -1)
+            }
+            else if iFiltroActual == 0 {//SE ESTAN MOSTRANDO TODOS
+                self.filtrar(tipoFiltro: 2)
+            }
+            btnMgastos?.isSelected = false
+        }
+        else{//SI NO SE ESTA MOSTRANDO GASTOS
+            if iFiltroActual == -1 {//NO SE ESTA MOSTRANDO NADA
+                self.filtrar(tipoFiltro: 1)
+            }
+            else if iFiltroActual == 2 {//SE ESTAN MOSTRANDO SOLO LOS INGRESOS
+                self.filtrar(tipoFiltro: 0)
+            }
+            btnMgastos?.isSelected = true
+        }
     }
     
     func refreshUI() {

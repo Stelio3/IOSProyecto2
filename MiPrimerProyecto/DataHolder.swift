@@ -20,7 +20,6 @@ class DataHolder: NSObject {
     var miPerfil:Perfil = Perfil()
     var miIngreso:Ingreso = Ingreso()
     var miGasto:Gasto = Gasto()
-    var arCiudades:[City] = []
     var arPerfiles:[Perfil] = []
     var hmImagenesDescargadas:[String:UIImage]?=[:]
     var user:String?
@@ -29,6 +28,8 @@ class DataHolder: NSObject {
     var GuardaGas:Double?
     var firUser:User?
     var credential: AuthCredential?
+    var contadorIng:Int = 0
+    var contadorGas:Int = 0
     
     func initFireBase(){
         FirebaseApp.configure()

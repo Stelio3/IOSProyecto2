@@ -13,7 +13,6 @@
 		32838260207FC28800731DF4 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3283825F207FC28800731DF4 /* MapKit.framework */; };
 		32838262207FC30000731DF4 /* VCMapa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32838261207FC30000731DF4 /* VCMapa.swift */; };
 		3288D05A207FFBB100DD5569 /* LocationAdmin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3288D059207FFBB100DD5569 /* LocationAdmin.swift */; };
-		3296946D2083555600C5BC25 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3296946C2083555600C5BC25 /* City.swift */; };
 		7912437E20BD7DE20023120D /* NotaDinero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7912437D20BD7DE20023120D /* NotaDinero.swift */; };
 		79146E5B20A1C9B90063368E /* VCGastar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79146E5A20A1C9B90063368E /* VCGastar.swift */; };
 		794FF438207628530041A73B /* VCItem1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794FF437207628530041A73B /* VCItem1.swift */; };
@@ -42,7 +41,6 @@
 		3283825F207FC28800731DF4 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		32838261207FC30000731DF4 /* VCMapa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCMapa.swift; sourceTree = "<group>"; };
 		3288D059207FFBB100DD5569 /* LocationAdmin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationAdmin.swift; sourceTree = "<group>"; };
-		3296946C2083555600C5BC25 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		7912437D20BD7DE20023120D /* NotaDinero.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotaDinero.swift; sourceTree = "<group>"; };
 		79146E5A20A1C9B90063368E /* VCGastar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCGastar.swift; sourceTree = "<group>"; };
 		794FF437207628530041A73B /* VCItem1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCItem1.swift; sourceTree = "<group>"; };
@@ -111,7 +109,6 @@
 				794FF43F207688A80041A73B /* TVCMiCelda.swift */,
 				3288D059207FFBB100DD5569 /* LocationAdmin.swift */,
 				32838261207FC30000731DF4 /* VCMapa.swift */,
-				3296946C2083555600C5BC25 /* City.swift */,
 				798B76E6207F871E003F39D3 /* Perfil.swift */,
 				79E054BF20AC7D8D0051EC23 /* Ingreso.swift */,
 				79E054C120AC7D9F0051EC23 /* Gasto.swift */,
@@ -304,7 +301,6 @@
 				7912437E20BD7DE20023120D /* NotaDinero.swift in Sources */,
 				794FF438207628530041A73B /* VCItem1.swift in Sources */,
 				79E054C220AC7D9F0051EC23 /* Gasto.swift in Sources */,
-				3296946D2083555600C5BC25 /* City.swift in Sources */,
 				794FF440207688A80041A73B /* TVCMiCelda.swift in Sources */,
 				327E7EA02096725A0014ED39 /* VCIngresar.swift in Sources */,
 			);

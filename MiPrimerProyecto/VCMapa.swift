@@ -31,7 +31,7 @@ class VCMapa: UIViewController, CLLocationManagerDelegate, DataHolderDelegate{
         // Dispose of any resources that can be recreated.
     }
     
-    func DHDDescargaCiudadesCompleta(blFinCiudades: Bool) {
+    /*func DHDDescargaCiudadesCompleta(blFinCiudades: Bool) {
         if blFinCiudades{
         for ciudades in DataHolder.sharedInstance.arCiudades{
             if ciudades.iLatitude != nil{
@@ -40,7 +40,7 @@ class VCMapa: UIViewController, CLLocationManagerDelegate, DataHolderDelegate{
         }
         }
         
-    }
+    }*/
 
     func AgregarPin(titulo:String, latitude lat: Double, longitude lon:Double ) {
         let miPin:MKPointAnnotation=MKPointAnnotation()

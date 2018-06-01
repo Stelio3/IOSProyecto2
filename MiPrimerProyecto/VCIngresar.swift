@@ -31,6 +31,7 @@ class VCIngresar: UIViewController, DataHolderDelegate {
             /*DataHolder.sharedInstance.miIngreso.sIngreso = Double((txtCantIngreso?.text)!)!
             DataHolder.sharedInstance.miIngreso.sNotaI = txtANotaIngreso?.text
             DataHolder.sharedInstance.insertarIngreso(ing: Double((txtCantIngreso?.text)!)!, notaI: (txtANotaIngreso?.text)!, delegate: self)*/
+            DataHolder.sharedInstance.contadorIng = DataHolder.sharedInstance.contadorIng + 1
             DataHolder.sharedInstance.miPerfil.agregarIngreso(dbi: Double((txtCantIngreso?.text)!)!, nota: (txtANotaIngreso?.text)!)
             DataHolder.sharedInstance.saveUser()
             self.performSegue(withIdentifier: "tringresar", sender: self)

@@ -20,7 +20,6 @@ class Ingreso: NotaDinero {
         sIngreso=0
         urlImage=""
         sNotaI=""
-        print("?????????? ",iTipo)
     }
     
     override init() {
@@ -32,24 +31,19 @@ class Ingreso: NotaDinero {
         self.datosIniciales()
         sIngreso=valores["Ningreso"] as? Double
         sNotaI=valores["notaIng"] as? String
-        urlImage=valores["ImagenI"] as? String
-        if urlImage == nil{
-            urlImage = "gs://miprimerproyecto-9f885.appspot.com/descarga.jpg"
-        }
-         print("!!!!!!!!!!?????????? ",iTipo)
+        urlImage="gs://miprimerproyecto-9f885.appspot.com/I.jpg"
         
     }
     func getMap() -> [String:AnyObject] {
         var hm:[String:AnyObject] = [:]
         hm["Ningreso"] = sIngreso! as AnyObject
         hm["notaIng"] = sNotaI! as AnyObject
-        hm["ImagenI"] = urlImage! as AnyObject
         print(hm)
         return hm
     }
     
     func guardarEnFB(sRuta:String) {
-        sID = "1"
-        DataHolder.sharedInstance.FireStoreDB?.collection(sRuta).document((sID)!).setData(getMap())
+        print("contador I", DataHolder.sharedInstance.contadorIng)
+        sID = String (format: "Ingreso %d", DataHolder.sharedInstance.contadorIng);        DataHolder.sharedInstance.FireStoreDB?.collection(sRuta).document((sID)!).setData(getMap())
     }
 }

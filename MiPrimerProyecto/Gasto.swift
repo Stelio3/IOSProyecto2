@@ -34,21 +34,18 @@ class Gasto: NotaDinero {
         self.datosIniciales()
         sGasto=valores["Ngasto"] as? Double
         sNotaG=valores["notaGas"] as? String
-        urlImage=valores["ImagenI"] as? String
-        if urlImage == nil{
-            urlImage = "gs://miprimerproyecto-9f885.appspot.com/descarga.jpg"
-        }
+        urlImage="gs://miprimerproyecto-9f885.appspot.com/G.jpg"
     }
     func getMap() -> [String:AnyObject] {
         var hm:[String:AnyObject] = [:]
         hm["Ngasto"] = sGasto! as AnyObject
         hm["notaGas"] = sNotaG! as AnyObject
-        hm["ImagenI"] = urlImage! as AnyObject
         return hm
     }
     
     func guardarEnFB(sRuta:String) {
-        sID = DataHolder.sharedInstance.firUser?.uid
+        print("contador G", DataHolder.sharedInstance.contadorGas)
+        sID = String (format: "Gasto %d", DataHolder.sharedInstance.contadorGas);
         DataHolder.sharedInstance.FireStoreDB?.collection(sRuta).document((sID)!).setData(getMap())
     }
     

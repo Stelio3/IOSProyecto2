@@ -14,15 +14,26 @@ class Gasto: NotaDinero {
     var sGasto:Double?
     var sNotaG:String?
     
-    override init() {
-        super.init()
-        iTipo = 0
+    
+    func datosIniciales() {
+        super.iTipo = 0
         sGasto=0
         sNotaG=""
+        print("?????????? ",iTipo)
     }
+    
+    
+    override init() {
+        super.init()
+        self.datosIniciales()
+    }
+    
     init(valores:[String:AnyObject]){
+        super.init()
+        self.datosIniciales()
         sGasto=valores["Ngasto"] as? Double
         sNotaG=valores["notaGas"] as? String
+        print("!!!!!!!!!!?????????? ",iTipo)
     }
     func getMap() -> [String:AnyObject] {
         var hm:[String:AnyObject] = [:]

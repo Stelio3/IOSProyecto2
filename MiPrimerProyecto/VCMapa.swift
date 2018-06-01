@@ -16,7 +16,7 @@ class VCMapa: UIViewController, CLLocationManagerDelegate, DataHolderDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        DataHolder.sharedInstance.descargarCiudades(delegate: self)
+        //DataHolder.sharedInstance.descargarCiudades(delegate: self)
         self.nuevaRegionMapa(latitude: 40.5, longitude: -3.666667)
         locationManager = CLLocationManager()
         locationManager?.delegate=self

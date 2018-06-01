@@ -10,8 +10,8 @@ import UIKit
 
 class TVCMiCelda: UITableViewCell, DataHolderDelegate {
 
-    @IBOutlet var lblNombre:UILabel?
-    @IBOutlet var lblPais:UILabel?
+    @IBOutlet var lblCantidad:UILabel?
+    @IBOutlet var lblNota:UILabel?
     @IBOutlet var lblImagen:UIImageView?
     var imagenDescargada:UIImage?
     

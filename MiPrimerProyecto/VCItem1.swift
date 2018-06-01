@@ -16,7 +16,8 @@ class VCItem1: UIViewController, UITableViewDelegate, UITableViewDataSource, Dat
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        DataHolder.sharedInstance.descargarCiudades(delegate: self)
+        self.filtrar(tipoFiltro: 0)
+        //DataHolder.sharedInstance.descargarCiudades(delegate: self)
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,11 +38,11 @@ class VCItem1: UIViewController, UITableViewDelegate, UITableViewDataSource, Dat
         self.refreshUI()
     }
     
-    func DHDDescargaCiudadesCompleta(blFinCiudades: Bool) {
+    /*func DHDDescargaCiudadesCompleta(blFinCiudades: Bool) {
         if blFinCiudades{
             self.refreshUI()
         }
-    }
+    }*/
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return arIGFiltrado.count
@@ -50,16 +51,23 @@ class VCItem1: UIViewController, UITableViewDelegate, UITableViewDataSource, Dat
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var celda:UITableViewCell?
 
+        print("!!!!!!!!!!!     ",arIGFiltrado[indexPath.row].iTipo)
         if arIGFiltrado[indexPath.row].iTipo == 0{
-            let gastos:TVCMiCelda = tableView.dequeueReusableCell(withIdentifier: "micelda2") as! TVCMiCelda
-            var gastoTemp:Gasto = arIGFiltrado[indexPath.row] as! Gasto
+            let gastos:TVCMiCelda = tableView.dequeueReusableCell(withIdentifier: "micelda1") as! TVCMiCelda//CELDA GASTO!!!!!!!
+            let gastoTemp:Gasto = arIGFiltrado[indexPath.row] as! Gasto//OBJETO GASTO!!!!!!!!!!!
+            gastos.lblCantidad?.text = String(format: "%.2f €",gastoTemp.sGasto!)
+            gastos.lblNota?.text = gastoTemp.sNotaG
             celda = gastos
             
         }
         else if arIGFiltrado[indexPath.row].iTipo == 1{
             let ingresos:TVCMiCelda = tableView.dequeueReusableCell(withIdentifier: "micelda1") as! TVCMiCelda
-            var ingresoTemp:Ingreso = arIGFiltrado[indexPath.row] as! Ingreso
+            let ingresoTemp:Ingreso = arIGFiltrado[indexPath.row] as! Ingreso
+            ingresos.lblCantidad?.text = String(format: "%.2f €", ingresoTemp.sIngreso!)
+            ingresos.lblNota?.text = ingresoTemp.sNotaI
+           
             celda = ingresos
+            
         }
         return celda!
     }
@@ -69,15 +77,5 @@ class VCItem1: UIViewController, UITableViewDelegate, UITableViewDataSource, Dat
             self.tabla?.reloadData()
         })
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

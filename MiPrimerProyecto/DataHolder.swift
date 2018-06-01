@@ -130,7 +130,7 @@ class DataHolder: NSObject {
         }
         return ""
     }
-    func descargarCiudades(delegate:DataHolderDelegate){
+    /*func descargarCiudades(delegate:DataHolderDelegate){
         FireStoreDB?.collection("cities").addSnapshotListener { (querySnapshot, err) in
             if let err = err {
                 print("Error getting documents: \(err)")
@@ -149,31 +149,7 @@ class DataHolder: NSObject {
                 delegate.DHDDescargaCiudadesCompleta!(blFinCiudades: true)
             }
         }
-    }
-    func descargarPerfiles(delegate: DataHolderDelegate){
-        self.FireStoreDB?.collection("Perfiles")
-            .addSnapshotListener { (querySnapshot, err) in
-                if let err = err {
-                    print("Error getting documents: \(err)")
-                    delegate.DHDDescargaPerfilesCompleta!(blFinPerfiles: false)
-                } else {
-                    self.arPerfiles=[]
-                    for document in querySnapshot!.documents {
-                        let perfil:Perfil = Perfil()
-                        perfil.sID=document.documentID
-                        perfil.setMap(valores: document.data())
-                        self.arPerfiles.append(perfil)
-                        
-                        print("\(document.documentID) => \(document.data())")
-                    }
-                    print(self.arPerfiles.count)
-                    delegate.DHDDescargaPerfilesCompleta!(blFinPerfiles: true)
-                }
-                // Do any additional setup after loading the view.
-                
-        }
-        
-    }
+    }*/
     func eventoClickLoginDH(email:String, pass:String, delegate: DataHolderDelegate){
         Auth.auth().signIn(withEmail: (email), password: (pass)) { (user, error) in
             if user != nil{
@@ -271,8 +247,7 @@ extension UIViewController{
 }
 
 @objc protocol DataHolderDelegate{
-    @objc optional func DHDDescargaCiudadesCompleta(blFinCiudades:Bool)
-    @objc optional func DHDDescargaPerfilesCompleta(blFinPerfiles:Bool)
+    //@objc optional func DHDDescargaCiudadesCompleta(blFinCiudades:Bool)
     @objc optional func DHDLoginOk(blLogin:Bool)
     @objc optional func DHDRegisterOk(blRegister:Bool)
     @objc optional func DHDImagenDescargada(imagen:UIImage)

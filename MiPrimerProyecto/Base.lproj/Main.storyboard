@@ -813,7 +813,7 @@
                                 <rect key="frame" x="0.0" y="20" width="185" height="56"/>
                                 <color key="backgroundColor" red="0.030132798160000002" green="1" blue="0.090853142610000007" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="56" id="pFb-mO-TBC"/>
+                                    <constraint firstAttribute="height" constant="56" id="mka-u3-Jm4"/>
                                 </constraints>
                                 <state key="normal" title="Mostrar Ingresos"/>
                                 <connections>
@@ -824,7 +824,7 @@
                                 <rect key="frame" x="0.0" y="84" width="375" height="565"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="micelda1" rowHeight="124" id="dPb-k3-ADT" customClass="TVCMiCelda" customModule="MiPrimerProyecto" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="micelda1" rowHeight="124" id="dPb-k3-ADT" customClass="TVCMiCelda" customModule="MiPrimerProyecto" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="124"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dPb-k3-ADT" id="TYe-Ds-jZc">
@@ -834,13 +834,13 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WPe-xj-VJD">
                                                     <rect key="frame" x="14" y="30" width="97" height="63"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="97" id="eUi-y7-M8W"/>
+                                                        <constraint firstAttribute="width" constant="97" id="n67-ec-zIm"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Bu-K1-8gS">
                                                     <rect key="frame" x="119" y="66" width="242" height="27"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="27" id="HfO-AM-7XY"/>
+                                                        <constraint firstAttribute="height" constant="27" id="zRY-gk-F5w"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -854,16 +854,16 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="7Bu-K1-8gS" firstAttribute="top" secondItem="w3P-fW-KFf" secondAttribute="bottom" constant="8" symbolic="YES" id="4z5-ht-JLt"/>
-                                                <constraint firstItem="WPe-xj-VJD" firstAttribute="top" secondItem="TYe-Ds-jZc" secondAttribute="topMargin" constant="-1" id="7zE-DJ-IES"/>
-                                                <constraint firstItem="WPe-xj-VJD" firstAttribute="bottom" secondItem="7Bu-K1-8gS" secondAttribute="bottom" id="C0p-Mt-4AU"/>
-                                                <constraint firstItem="w3P-fW-KFf" firstAttribute="trailing" secondItem="7Bu-K1-8gS" secondAttribute="trailing" id="NLT-y3-a6F"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="w3P-fW-KFf" secondAttribute="trailing" constant="-2" id="R3T-ey-zv1"/>
-                                                <constraint firstItem="w3P-fW-KFf" firstAttribute="leading" secondItem="WPe-xj-VJD" secondAttribute="trailing" constant="8" symbolic="YES" id="ToX-0e-YXu"/>
-                                                <constraint firstItem="WPe-xj-VJD" firstAttribute="leading" secondItem="TYe-Ds-jZc" secondAttribute="leadingMargin" constant="-2" id="dqJ-cb-Ggp"/>
-                                                <constraint firstItem="w3P-fW-KFf" firstAttribute="leading" secondItem="7Bu-K1-8gS" secondAttribute="leading" id="g0o-Cu-XIH"/>
-                                                <constraint firstItem="WPe-xj-VJD" firstAttribute="centerY" secondItem="TYe-Ds-jZc" secondAttribute="centerY" id="ptC-To-NEm"/>
-                                                <constraint firstItem="WPe-xj-VJD" firstAttribute="top" secondItem="w3P-fW-KFf" secondAttribute="top" id="q0x-7u-J5r"/>
+                                                <constraint firstItem="w3P-fW-KFf" firstAttribute="trailing" secondItem="7Bu-K1-8gS" secondAttribute="trailing" id="0Yg-F3-fLc"/>
+                                                <constraint firstItem="w3P-fW-KFf" firstAttribute="leading" secondItem="WPe-xj-VJD" secondAttribute="trailing" constant="8" symbolic="YES" id="4TO-Yx-jtF"/>
+                                                <constraint firstItem="WPe-xj-VJD" firstAttribute="centerY" secondItem="TYe-Ds-jZc" secondAttribute="centerY" id="F2f-Zb-K58"/>
+                                                <constraint firstItem="7Bu-K1-8gS" firstAttribute="top" secondItem="w3P-fW-KFf" secondAttribute="bottom" constant="8" symbolic="YES" id="XDK-uM-oTk"/>
+                                                <constraint firstItem="WPe-xj-VJD" firstAttribute="leading" secondItem="TYe-Ds-jZc" secondAttribute="leadingMargin" constant="-2" id="euE-jD-9zj"/>
+                                                <constraint firstItem="WPe-xj-VJD" firstAttribute="top" secondItem="w3P-fW-KFf" secondAttribute="top" id="hPq-f0-RLe"/>
+                                                <constraint firstItem="WPe-xj-VJD" firstAttribute="top" secondItem="TYe-Ds-jZc" secondAttribute="topMargin" constant="-1" id="p3V-4S-9YV"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="w3P-fW-KFf" secondAttribute="trailing" constant="-2" id="qkg-Ja-1p0"/>
+                                                <constraint firstItem="w3P-fW-KFf" firstAttribute="leading" secondItem="7Bu-K1-8gS" secondAttribute="leading" id="vnD-2M-g9v"/>
+                                                <constraint firstItem="WPe-xj-VJD" firstAttribute="bottom" secondItem="7Bu-K1-8gS" secondAttribute="bottom" id="yVB-Rt-7JU"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -883,7 +883,7 @@
                                 <rect key="frame" x="193" y="20" width="182" height="56"/>
                                 <color key="backgroundColor" red="1" green="0.15255521220000001" blue="0.038949273870000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="182" id="L0g-5F-9cx"/>
+                                    <constraint firstAttribute="width" constant="182" id="UFc-h3-acZ"/>
                                 </constraints>
                                 <state key="normal" title="Mostrar Gastos"/>
                                 <connections>
@@ -893,16 +893,16 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="vYR-Nh-6ZE" firstAttribute="leading" secondItem="GWv-DW-b4y" secondAttribute="trailing" constant="8" symbolic="YES" id="23S-Yq-kGi"/>
-                            <constraint firstItem="GWv-DW-b4y" firstAttribute="baseline" secondItem="vYR-Nh-6ZE" secondAttribute="firstBaseline" id="CXL-ub-2vu"/>
-                            <constraint firstAttribute="trailing" secondItem="vYR-Nh-6ZE" secondAttribute="trailing" id="IPM-Ic-oZ8"/>
-                            <constraint firstItem="GWv-DW-b4y" firstAttribute="leading" secondItem="iXG-HJ-ZPQ" secondAttribute="leading" id="K5Q-R9-txX"/>
-                            <constraint firstItem="GWv-DW-b4y" firstAttribute="top" secondItem="KgP-wp-flP" secondAttribute="top" id="LWH-3R-2RA"/>
-                            <constraint firstItem="iXG-HJ-ZPQ" firstAttribute="top" secondItem="GWv-DW-b4y" secondAttribute="bottom" constant="8" symbolic="YES" id="Xj3-z9-tog"/>
-                            <constraint firstItem="GWv-DW-b4y" firstAttribute="leading" secondItem="jNE-5J-8vU" secondAttribute="leading" id="YoH-6z-Xj7"/>
-                            <constraint firstItem="GWv-DW-b4y" firstAttribute="top" secondItem="vYR-Nh-6ZE" secondAttribute="top" id="cRh-aC-0MZ"/>
-                            <constraint firstItem="vYR-Nh-6ZE" firstAttribute="trailing" secondItem="iXG-HJ-ZPQ" secondAttribute="trailing" id="tWw-39-tV4"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="iXG-HJ-ZPQ" secondAttribute="bottom" constant="-31" id="vBx-Zc-9di"/>
+                            <constraint firstItem="vYR-Nh-6ZE" firstAttribute="leading" secondItem="GWv-DW-b4y" secondAttribute="trailing" constant="8" symbolic="YES" id="2Ja-0A-iMn"/>
+                            <constraint firstItem="GWv-DW-b4y" firstAttribute="leading" secondItem="jNE-5J-8vU" secondAttribute="leading" id="5sv-sR-PWB"/>
+                            <constraint firstItem="GWv-DW-b4y" firstAttribute="top" secondItem="vYR-Nh-6ZE" secondAttribute="top" id="Cu0-WZ-idP"/>
+                            <constraint firstItem="iXG-HJ-ZPQ" firstAttribute="top" secondItem="GWv-DW-b4y" secondAttribute="bottom" constant="8" symbolic="YES" id="Sev-B4-2PM"/>
+                            <constraint firstItem="GWv-DW-b4y" firstAttribute="baseline" secondItem="vYR-Nh-6ZE" secondAttribute="firstBaseline" id="UVi-GK-x3y"/>
+                            <constraint firstItem="GWv-DW-b4y" firstAttribute="leading" secondItem="iXG-HJ-ZPQ" secondAttribute="leading" id="V0l-xQ-jJu"/>
+                            <constraint firstItem="GWv-DW-b4y" firstAttribute="top" secondItem="KgP-wp-flP" secondAttribute="top" id="d85-wE-FPJ"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="iXG-HJ-ZPQ" secondAttribute="bottom" constant="-31" id="mub-tl-U8B"/>
+                            <constraint firstAttribute="trailing" secondItem="vYR-Nh-6ZE" secondAttribute="trailing" id="nsJ-gF-sWe"/>
+                            <constraint firstItem="vYR-Nh-6ZE" firstAttribute="trailing" secondItem="iXG-HJ-ZPQ" secondAttribute="trailing" id="x6Q-sK-r1Q"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="KgP-wp-flP"/>
                     </view>

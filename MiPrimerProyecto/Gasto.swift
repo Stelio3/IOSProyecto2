@@ -13,13 +13,14 @@ class Gasto: NotaDinero {
     var sID:String?
     var sGasto:Double?
     var sNotaG:String?
+    var urlImage:String?
     
     
     func datosIniciales() {
         super.iTipo = 0
         sGasto=0
+        urlImage=""
         sNotaG=""
-        print("?????????? ",iTipo)
     }
     
     
@@ -33,12 +34,16 @@ class Gasto: NotaDinero {
         self.datosIniciales()
         sGasto=valores["Ngasto"] as? Double
         sNotaG=valores["notaGas"] as? String
-        print("!!!!!!!!!!?????????? ",iTipo)
+        urlImage=valores["ImagenI"] as? String
+        if urlImage == nil{
+            urlImage = "gs://miprimerproyecto-9f885.appspot.com/descarga.jpg"
+        }
     }
     func getMap() -> [String:AnyObject] {
         var hm:[String:AnyObject] = [:]
         hm["Ngasto"] = sGasto! as AnyObject
         hm["notaGas"] = sNotaG! as AnyObject
+        hm["ImagenI"] = urlImage! as AnyObject
         return hm
     }
     

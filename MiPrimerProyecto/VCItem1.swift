@@ -62,6 +62,8 @@ class VCItem1: UIViewController, UITableViewDelegate, UITableViewDataSource, Dat
             let gastoTemp:Gasto = arIGFiltrado[indexPath.row] as! Gasto//OBJETO GASTO!!!!!!!!!!!
             gastos.lblCantidad?.text = String(format: "%.2f €",gastoTemp.sGasto!)
             gastos.lblNota?.text = gastoTemp.sNotaG
+            gastos.mostrarImagen(uri: gastoTemp.urlImage!)
+            
             celda = gastos
             
         }
@@ -70,6 +72,7 @@ class VCItem1: UIViewController, UITableViewDelegate, UITableViewDataSource, Dat
             let ingresoTemp:Ingreso = arIGFiltrado[indexPath.row] as! Ingreso
             ingresos.lblCantidad?.text = String(format: "%.2f €", ingresoTemp.sIngreso!)
             ingresos.lblNota?.text = ingresoTemp.sNotaI
+            ingresos.mostrarImagen(uri: ingresoTemp.urlImage!)
            
             celda = ingresos
             

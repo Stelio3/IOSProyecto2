@@ -43,7 +43,14 @@ class Ingreso: NotaDinero {
     }
     
     func guardarEnFB(sRuta:String) {
-        print("contador I", DataHolder.sharedInstance.contadorIng)
-        sID = String (format: "Ingreso %d", DataHolder.sharedInstance.contadorIng);        DataHolder.sharedInstance.FireStoreDB?.collection(sRuta).document((sID)!).setData(getMap())
+        
+        if sID != nil{
+            DataHolder.sharedInstance.FireStoreDB?.collection(sRuta).document(sID!).setData(getMap())
+        }
+        else{
+            sID = DataHolder.sharedInstance.FireStoreDB?.collection(sRuta).addDocument(data: getMap()).documentID
+        }
+        
+        
     }
 }

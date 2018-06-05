@@ -28,8 +28,6 @@ class DataHolder: NSObject {
     var GuardaGas:Double?
     var firUser:User?
     var credential: AuthCredential?
-    var contadorIng:Int = 0
-    var contadorGas:Int = 0
     
     func initFireBase(){
         FirebaseApp.configure()

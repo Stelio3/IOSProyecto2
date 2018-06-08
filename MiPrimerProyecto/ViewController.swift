@@ -32,7 +32,6 @@ class ViewController: UIViewController, DataHolderDelegate {
             if user != nil{
                 DataHolder.sharedInstance.firUser = user
                 DataHolder.sharedInstance.descargarPerfil(delegate: self)
-                //self.performSegue(withIdentifier: "trlogin", sender: self)
             }
         }
     }
@@ -43,11 +42,9 @@ class ViewController: UIViewController, DataHolderDelegate {
     }
     func DHDLoginOk(blLogin: Bool) {
         if blLogin {
-            if (recordad?.isOn)!{
-                DataHolder.sharedInstance.user = txtUser?.text
-                DataHolder.sharedInstance.pass = txtPass?.text
-                DataHolder.sharedInstance.saveData()
-            }
+            DataHolder.sharedInstance.user = txtUser?.text
+            DataHolder.sharedInstance.pass = txtPass?.text
+            DataHolder.sharedInstance.saveData()
             self.performSegue(withIdentifier: "trlogin", sender: self)
         }
     }

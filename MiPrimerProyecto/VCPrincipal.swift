@@ -16,6 +16,7 @@ class VCPrincipal: UIViewController, DataHolderDelegate{
     @IBOutlet var btnIngreso:UIButton?
     @IBOutlet var btnGasto:UIButton?
     @IBOutlet var VistaMenu:UIView?
+    @IBOutlet var btndesplegarMenu:UIButton?
     var frmMenuAppear:CGRect?
     var frmMenuCerrar:CGRect?
 
@@ -23,6 +24,7 @@ class VCPrincipal: UIViewController, DataHolderDelegate{
         super.viewDidLoad()
         btnIngreso?.layer.cornerRadius = 15
         btnGasto?.layer.cornerRadius = 15
+        btndesplegarMenu?.layer.cornerRadius = 15
         
         frmMenuCerrar = VistaMenu?.frame
         frmMenuAppear = VistaMenu?.frame

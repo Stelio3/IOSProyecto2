@@ -35,6 +35,10 @@ class VCRegister: UIViewController, DataHolderDelegate {
     func DHDRegisterOk(blRegister: Bool) {
         if blRegister{
             self.performSegue(withIdentifier: "trregister", sender: self)
+        }else{
+            let alerta = UIAlertController(title: "Aviso", message: "", preferredStyle: .alert)
+            alerta.addAction(UIAlertAction(title:"OK", style: .default, handler: nil))
+            present(alerta, animated: true, completion: nil)
         }
     }
     

@@ -17,6 +17,8 @@ class VCGastar: UIViewController, DataHolderDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        btnGuardarGasto?.layer.cornerRadius = 10
+        btnCancelarGasto?.layer.cornerRadius = 10
         self.hideKeyBoardWhenTappedAround()
         // Do any additional setup after loading the view.
     }
@@ -32,7 +34,7 @@ class VCGastar: UIViewController, DataHolderDelegate {
             self.performSegue(withIdentifier: "trgastar", sender: self)
         }
         else{
-            let alerta = UIAlertController(title: "Aviso", message: "El campo azul no puede estar vacío para guardar el gasto", preferredStyle: .alert)
+            let alerta = UIAlertController(title: "Aviso", message: "Introduzca una cantidad a gastar", preferredStyle: .alert)
             alerta.addAction(UIAlertAction(title:"OK", style: .default, handler: nil))
             self.present(alerta, animated: true, completion: nil)
         }

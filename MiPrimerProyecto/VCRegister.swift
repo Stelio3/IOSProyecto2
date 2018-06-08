@@ -36,7 +36,7 @@ class VCRegister: UIViewController, DataHolderDelegate {
         if blRegister{
             self.performSegue(withIdentifier: "trregister", sender: self)
         }else{
-            let alerta = UIAlertController(title: "Aviso", message: "", preferredStyle: .alert)
+            let alerta = UIAlertController(title: "Por favor", message: "Compruebe que todos los campos esten correctos", preferredStyle: .alert)
             alerta.addAction(UIAlertAction(title:"OK", style: .default, handler: nil))
             present(alerta, animated: true, completion: nil)
         }

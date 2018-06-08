@@ -28,12 +28,12 @@ class ViewController: UIViewController, DataHolderDelegate {
         }*/
         txtUser?.text = DataHolder.sharedInstance.user
         txtPass?.text = DataHolder.sharedInstance.pass
-        Auth.auth().addStateDidChangeListener { (auth, user) in
+        /*Auth.auth().addStateDidChangeListener { (auth, user) in
             if user != nil{
                 DataHolder.sharedInstance.firUser = user
                 DataHolder.sharedInstance.descargarPerfil(delegate: self)
             }
-        }
+        }*/
     }
 
     override func didReceiveMemoryWarning() {

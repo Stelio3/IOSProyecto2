@@ -15,6 +15,8 @@ class VCPrincipal: UIViewController, DataHolderDelegate{
     @IBOutlet var ProgressBar:GTProgressBar?
     @IBOutlet var btnIngreso:UIButton?
     @IBOutlet var btnGasto:UIButton?
+    @IBOutlet var btnBorrarCuenta:UIButton?
+    @IBOutlet var btnCerrarSesion:UIButton?
     @IBOutlet var VistaMenu:UIView?
     @IBOutlet var btndesplegarMenu:UIButton?
     var frmMenuAppear:CGRect?
@@ -25,6 +27,8 @@ class VCPrincipal: UIViewController, DataHolderDelegate{
         btnIngreso?.layer.cornerRadius = 15
         btnGasto?.layer.cornerRadius = 15
         btndesplegarMenu?.layer.cornerRadius = 15
+        btnBorrarCuenta?.layer.cornerRadius = 10
+        btnCerrarSesion?.layer.cornerRadius = 10
         
         frmMenuCerrar = VistaMenu?.frame
         frmMenuAppear = VistaMenu?.frame
